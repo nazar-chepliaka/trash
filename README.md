@@ -57,5 +57,5 @@ class NullableMessagePseudoPoolObject {
 
 
 <p>
-<img src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/gif/image-animated-common-sources-of-data-2.50b02d8ac5369545fb03d2fa3d8c06f93e736e5d.gif">
+<img width="500" src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/gif/image-animated-common-sources-of-data-2.50b02d8ac5369545fb03d2fa3d8c06f93e736e5d.gif">
 </p>
