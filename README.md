@@ -30,7 +30,7 @@ class NullableMessagePseudoPoolObject {
 
 // inspired by "Електричне коло може перетворювати енергію, але потребує джерел для підзарядки." (https://en.wikipedia.org/wiki/Organic_unity)
 // + https://youtu.be/cyFM2emjbQ8
-// + https://youtu.be/rIaaH87z1-g
+// + https://youtu.be/rIaaH87z1-g (https://uk.wikipedia.org/wiki/Предметно-орієнтоване_проєктування)
 // + https://www.web3d.org/x3d/content/examples/Basic/Shaders/FlutterIndex.html (недотягнутий проєкційний прікол)
 // + https://uk.wikipedia.org/wiki/Китайська_кімната
 // + https://uk.wikipedia.org/wiki/Синергія
