@@ -39,7 +39,7 @@ class NullableMessagePseudoPoolObject {
 ?>
 ```
 
-> [Contextual ad «NFT as art that is easy to follow up»](https://www.instagram.com/p/ChgeILwsrJD/)
+> [Кіношно-серіально-коміксова contextual ad «NFT as art that is easy to follow up»](https://www.instagram.com/p/ChgeILwsrJD/)
 
 ![This is an example](https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/nft_ad/300245431_476381560637704_5357600223793359401_n.jpg)
 
