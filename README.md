@@ -9,8 +9,6 @@
 > [^1]: База знань — Вікіпедія. URL: https://uk.wikipedia.org/wiki/База_знань (дата звернення: 01.05.2022).
 > [^2]: Web Platform Design Principles. URL: https://www.w3.org/TR/2021/NOTE-design-principles-20211216/ (дата звернення: 01.05.2022).
 
-<img width="500" src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/gif/image-animated-common-sources-of-data-2.50b02d8ac5369545fb03d2fa3d8c06f93e736e5d.gif">
-
 # Документація
 
 ```php
