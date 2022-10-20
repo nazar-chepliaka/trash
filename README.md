@@ -1,4 +1,4 @@
-> Доброго часу доби, ваш новий круп'є́ - алгоритми рекомендацій.
+> Доброго часу доби, ваш новий круп'є́ - [рекомендаційна система](https://uk.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D1%96%D0%B9%D0%BD%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0).
 <img src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/alquiler-mesa-blackjack-01.jpg" height="220">
 
 
