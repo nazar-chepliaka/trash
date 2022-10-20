@@ -5,6 +5,7 @@
 > Примітки: 
 > 1. Майте на увазі, родовий відмінок прикметника "конструктивний" містить натяк на метод доведення[*](https://en.wikipedia.org/wiki/Qualitative_comparative_analysis).
 > 2. Цей абзац присвячується ДСТУ 3008-95.
+> 3. [REST](https://uk.wikipedia.org/wiki/REST) (укр. відпочинок, нерухомість) — це архітектурний стиль для розподілених гіпертекстових систем.
 > 
 > [^1]: База знань — Вікіпедія. URL: https://uk.wikipedia.org/wiki/База_знань (дата звернення: 01.05.2022).
 > [^2]: Web Platform Design Principles. URL: https://www.w3.org/TR/2021/NOTE-design-principles-20211216/ (дата звернення: 01.05.2022).
