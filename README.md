@@ -73,3 +73,5 @@ class NullableMessagePseudoPoolObject {
 <p>
 <img title="https://en.wikipedia.org/wiki/IDEF6" alt="https://en.wikipedia.org/wiki/IDEF6" src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/IIDEF4_Design_Activities.jpg">
 </p>
+
+<img src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/Screenshot-from-2022-10-20-14-22-03.png">
