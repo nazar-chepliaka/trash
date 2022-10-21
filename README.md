@@ -10,7 +10,7 @@
 > Примітки: 
 > 1. Майте на увазі, родовий відмінок прикметника "конструктивний" містить натяк на метод доведення[*](https://en.wikipedia.org/wiki/Qualitative_comparative_analysis).
 > 2. Цей абзац присвячується ДСТУ 3008-95.
-> 3. [REST](https://uk.wikipedia.org/wiki/REST)(скор. англ. Representational State Transfer, «передача репрезентативного стану», або слово означаюче і відпочинок і нерухомість написане в сторісному стилі, тобто капсом) — це архітектурний стиль для розподілених [гіпер](https://uk.wikipedia.org/wiki/%D0%93%D1%96%D0%BF%D0%B5%D1%80%D1%82%D1%80%D0%BE%D1%84%D1%96%D1%8F)текстових систем ("мутних замутів").
+> 3. [REST](https://uk.wikipedia.org/wiki/REST)(скор. англ. Representational State Transfer, «передача репрезентативного стану», або слово означаюче і відпочинок) — це архітектурний стиль для розподілених [гіпер](https://uk.wikipedia.org/wiki/%D0%93%D1%96%D0%BF%D0%B5%D1%80%D1%82%D1%80%D0%BE%D1%84%D1%96%D1%8F)текстових систем ("мутних замутів").
 > 
 > [^1]: База знань — Вікіпедія. URL: https://uk.wikipedia.org/wiki/База_знань (дата звернення: 01.05.2022).
 > [^2]: Web Platform Design Principles. URL: https://www.w3.org/TR/2021/NOTE-design-principles-20211216/ (дата звернення: 01.05.2022).
