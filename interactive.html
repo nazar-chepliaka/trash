@@ -21,7 +21,6 @@
         position: relative;
 		    text-align: center;
 		    padding-bottom: 40px;
-		    background: url(https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/meme/2.png);
 		    background-position: top center;
 		    background-size: 300px;
 		    background-repeat: no-repeat;
@@ -82,6 +81,7 @@
 				function bigger_plus(){
 					
 					var element = document.getElementById('wrapper');
+					element.style.backgroundImage = "url('https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/meme/2.png')";
 					var smaller_btns_wrapper = document.getElementById('smaller_btns_wrapper');
 					var bigger_btns_wrapper = document.getElementById('bigger_btns_wrapper');
 					var curr_lineheight = parseInt(bigger_btns_wrapper.dataset.lineheight, 10);
@@ -110,6 +110,7 @@
 				function smaller_plus(){
 					
 					var element = document.getElementById('wrapper');
+					element.style.backgroundImage = "url('https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/meme/2.png')";
 					var smaller_btns_wrapper = document.getElementById('smaller_btns_wrapper');
 					var bigger_btns_wrapper = document.getElementById('bigger_btns_wrapper');
 					var curr_lineheight = parseInt(smaller_btns_wrapper.dataset.lineheight, 10);
