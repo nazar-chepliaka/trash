@@ -35,11 +35,23 @@ function asciiString(image) {
       const len = density.length;
       const charIndex = floor(map(avg, 0, 255, len, 0));
 
+      let class_name = "class_n0";
+
+      if (i < 10) {
+        class_name = "class_n1";
+      } else if (i < 50){
+        class_name = "class_n2";
+      } else if (i < 90){
+        class_name = "class_n3";
+      } else if (i < 130){
+        class_name = "class_n4";
+      }
+
       const c = density.charAt(charIndex);
-      if (c == " ") row += "&nbsp;";
-      else row += c;
+      if (c == " ") row += "<span class=\""+class_name+"\">&nbsp;</span>";
+      else row += "<span class=\""+class_name+"\">"+c+"</span>";
     }
-    asciiImageString = asciiImageString + "<div><span>" + row + "</span></div>";
+    asciiImageString = asciiImageString + "<div><span class=\"main_span\">" + row + "</span></div>";
   }
 
   return asciiImageString;
