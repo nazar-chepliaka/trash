@@ -39,7 +39,7 @@ function asciiString(image) {
       if (c == " ") row += "&nbsp;";
       else row += c;
     }
-    asciiImageString = asciiImageString + "<div>" + row + "</div>";
+    asciiImageString = asciiImageString + "<div><span>" + row + "</span></div>";
   }
 
   return asciiImageString;
