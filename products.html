@@ -1,0 +1,161 @@
+<html style="
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+"><head>
+	<meta charset="utf-8">
+	<title></title>
+
+	<script src="p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <style type="text/css">
+      #wrapper {
+        margin: 0;
+        padding: 0;
+        font-family: 'Courier';
+        color: #FFF;
+        font-size: 8pt;
+    		line-height: 4.5pt;
+        display: block;
+        position: relative;
+		    text-align: center;
+		    padding-bottom: 40px;
+      }
+
+      .btn {
+      	padding: 10px;
+      	border: 1px solid #fff;
+      	width: 50px;
+      	display: inline-block;
+      	margin: 0px 10px;
+      	cursor: pointer;
+      }
+
+      #bigger_btns_wrapper {
+      	display: block;
+      }
+
+      #smaller_btns_wrapper {
+      	display: none;
+      }
+
+      @media screen and (max-width:1200px){
+      	#wrapper {
+		    	font-size: 3pt;
+		        line-height: 1.5pt;
+		    }
+
+	      #bigger_btns_wrapper {
+	      	display: none;
+	      }
+
+	      #smaller_btns_wrapper {
+	      	display: block;
+	      }
+    	}
+    </style>
+    <script type="text/javascript">
+    	function bigger_minus(){
+					var element = document.getElementById('wrapper');
+					var smaller_btns_wrapper = document.getElementById('smaller_btns_wrapper');
+					var bigger_btns_wrapper = document.getElementById('bigger_btns_wrapper');
+					var curr_lineheight = parseInt(bigger_btns_wrapper.dataset.lineheight, 10);
+					curr_lineheight = curr_lineheight - 1;
+					if (curr_lineheight > 0) {
+						bigger_btns_wrapper.dataset.lineheight = curr_lineheight;
+						smaller_btns_wrapper.dataset.lineheight = curr_lineheight;
+						curr_lineheight = curr_lineheight + 0.5;
+						element.style['line-height'] = curr_lineheight + 'pt';
+					}
+				}
+
+				function bigger_plus(){
+					
+					var element = document.getElementById('wrapper');
+					var smaller_btns_wrapper = document.getElementById('smaller_btns_wrapper');
+					var bigger_btns_wrapper = document.getElementById('bigger_btns_wrapper');
+					var curr_lineheight = parseInt(bigger_btns_wrapper.dataset.lineheight, 10);
+					curr_lineheight = curr_lineheight + 1;
+					bigger_btns_wrapper.dataset.lineheight = curr_lineheight;
+					smaller_btns_wrapper.dataset.lineheight = curr_lineheight;
+					curr_lineheight = curr_lineheight + 0.5;
+					if (curr_lineheight > 0) {
+						element.style['line-height'] = curr_lineheight + 'pt';
+					}
+				}
+    	function smaller_minus(){
+					var element = document.getElementById('wrapper');
+					var smaller_btns_wrapper = document.getElementById('smaller_btns_wrapper');
+					var bigger_btns_wrapper = document.getElementById('bigger_btns_wrapper');
+					var curr_lineheight = parseInt(smaller_btns_wrapper.dataset.lineheight, 10);
+					curr_lineheight = curr_lineheight - 1;
+					if (curr_lineheight > 0) {
+						smaller_btns_wrapper.dataset.lineheight = curr_lineheight;
+						bigger_btns_wrapper.dataset.lineheight = curr_lineheight;
+						curr_lineheight = curr_lineheight + 0.5;
+						element.style['line-height'] = curr_lineheight + 'pt';
+					}
+				}
+
+				function smaller_plus(){
+					
+					var element = document.getElementById('wrapper');
+					var smaller_btns_wrapper = document.getElementById('smaller_btns_wrapper');
+					var bigger_btns_wrapper = document.getElementById('bigger_btns_wrapper');
+					var curr_lineheight = parseInt(smaller_btns_wrapper.dataset.lineheight, 10);
+					curr_lineheight = curr_lineheight + 1;
+					smaller_btns_wrapper.dataset.lineheight = curr_lineheight;
+					bigger_btns_wrapper.dataset.lineheight = curr_lineheight;
+					curr_lineheight = curr_lineheight + 0.5;
+					if (curr_lineheight > 0) {
+						element.style['line-height'] = curr_lineheight + 'pt';
+					}
+				}
+    </script>
+</head>
+<body style="background:#000;display: flex;flex-direction: column;align-items: center;width: 100%;height: 100%;padding: 0px;margin: 0px;">
+	<script src="sketch.js"></script>
+
+	<div style="
+		margin-left: 50px;
+	    margin-right: 50px;
+	    max-width: 1030px;
+	    width: 80%;
+	">
+		<div style="width:100%;overflow-x: hidden;position: relative;">
+			<div style="width: 2000px;position: relative;left: 50%;margin-left: -1000px;">
+				<div id="wrapper"><div id="inner-wrapper"></div></div>
+			</div>
+		</div>
+
+
+		<div style="text-align:center;color: #fff;padding-bottom: 20px;" id="bigger_btns_wrapper" data-lineheight="4">
+			Header height:<span id="btn_minus" onclick="bigger_minus()" class="btn">-</span><span class="btn" onclick="bigger_plus()">+</span>
+		</div>
+
+		<div style="text-align:center;color: #fff;padding-bottom: 20px;" id="smaller_btns_wrapper" data-lineheight="1">
+			Header height:<span id="btn_minus" onclick="smaller_minus()" class="btn">-</span><span class="btn" onclick="smaller_plus()">+</span>
+		</div>
+
+		<div style="text-align: center;padding-bottom: 40px;">
+			<a style="color: #fff;border:1px solid #fff;padding: 10px;margin: 15px;text-decoration: none;border-radius: 4px;    display: inline-block;" href="https://nazar-chepliaka.github.io/ukr-git-documentation/" >Home</a>
+
+			<a style="color: #fff;border:1px solid #fff;padding: 10px;margin: 15px;text-decoration: none;border-radius: 4px;    display: inline-block;" href="https://nazar-chepliaka.github.io/ukr-git-documentation/video9.html" target="_blank">TV channel</a>
+			<a style="color: #fff;border:1px solid #fff;padding: 10px;margin: 15px;text-decoration: none;border-radius: 4px;    display: inline-block;" href="https://nazar-chepliaka.github.io/ukr-git-documentation/video3.html" target="_blank">Highlights</a>
+			<a style="color: #fff;border:1px solid #fff;padding: 10px;margin: 15px;text-decoration: none;border-radius: 4px;    display: inline-block;" href="https://nazar-chepliaka.github.io/ukr-git-documentation/video4.html" target="_blank">About</a>
+			<a style="color: #fff;border:1px solid #fff;padding: 10px;margin: 15px;text-decoration: none;border-radius: 4px;    display: inline-block;" href="https://nazar-chepliaka.github.io/ukr-git-documentation/video0.html" target="_blank">Infinite Patterns</a>
+			<a style="color: #fff;border:1px solid #fff;padding: 10px;margin: 15px;text-decoration: none;border-radius: 4px;    display: inline-block;" href="https://nazar-chepliaka.github.io/ukr-git-documentation/video2.html" target="_blank">FAQ</a>
+			<a style="color: #fff;border:1px solid #fff;padding: 10px;margin: 15px;text-decoration: none;border-radius: 4px;    display: inline-block;" href="https://github.com/nazar-chepliaka/ukr-git-documentation/wiki" target="_blank">Wiki</a>
+
+		</div>
+
+		<div style="color:#ffffff;">
+			<h1>Products</h1>
+			<img src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/120001064_2700908016893874_5639897206911245177_n.jpg"><br><br><br>
+		</div>
+
+	</div>
+
+
+</body></html>
