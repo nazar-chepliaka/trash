@@ -95,6 +95,8 @@
 						smaller_btns_wrapper.dataset.lineheight = curr_lineheight;
 						curr_lineheight = curr_lineheight + 0.5;
 						element.style['line-height'] = curr_lineheight + 'pt';
+					} else {
+						document.getElementById('bigger_btn_minus').style.display = 'none';
 					}
 				}
 
@@ -109,9 +111,10 @@
 					bigger_btns_wrapper.dataset.lineheight = curr_lineheight;
 					smaller_btns_wrapper.dataset.lineheight = curr_lineheight;
 					curr_lineheight = curr_lineheight + 0.5;
-					if (curr_lineheight > 0) {
-						element.style['line-height'] = curr_lineheight + 'pt';
-					}
+					
+					element.style['line-height'] = curr_lineheight + 'pt';
+					
+					document.getElementById('bigger_btn_minus').style.display = 'inline-block';
 				}
     	function smaller_minus(){
 					var element = document.getElementById('wrapper');
@@ -124,6 +127,8 @@
 						bigger_btns_wrapper.dataset.lineheight = curr_lineheight;
 						curr_lineheight = curr_lineheight + 0.5;
 						element.style['line-height'] = curr_lineheight + 'pt';
+					} else {
+						document.getElementById('smaller_btn_minus').style.display = 'none';
 					}
 				}
 
@@ -138,9 +143,10 @@
 					smaller_btns_wrapper.dataset.lineheight = curr_lineheight;
 					bigger_btns_wrapper.dataset.lineheight = curr_lineheight;
 					curr_lineheight = curr_lineheight + 0.5;
-					if (curr_lineheight > 0) {
-						element.style['line-height'] = curr_lineheight + 'pt';
-					}
+					
+					element.style['line-height'] = curr_lineheight + 'pt';
+
+					document.getElementById('smaller_btn_minus').style.display = 'inline-block';
 				}
     </script>
 </head>
@@ -161,11 +167,11 @@
 
 
 		<div style="text-align:center;color: #fff;padding-bottom: 20px;" id="bigger_btns_wrapper" data-lineheight="4">
-			Header height:<span id="btn_minus" onclick="bigger_minus()" class="btn">-</span><span class="btn" onclick="bigger_plus()">+</span>
+			Header height:<span id="bigger_btn_minus" onclick="bigger_minus()" class="btn">-</span><span id="bigger_btn_plus" class="btn" onclick="bigger_plus()">+</span>
 		</div>
 
 		<div style="text-align:center;color: #fff;padding-bottom: 20px;" id="smaller_btns_wrapper" data-lineheight="1">
-			Header height:<span id="btn_minus" onclick="smaller_minus()" class="btn">-</span><span class="btn" onclick="smaller_plus()">+</span>
+			Header height:<span id="smaller_btn_minus" onclick="smaller_minus()" class="btn">-</span><span id="smaller_btn_plus" class="btn" onclick="smaller_plus()">+</span>
 		</div>
 
 		<div style="text-align: center;padding-bottom: 40px;">
