@@ -15,50 +15,64 @@
         padding: 0;
         font-family: 'Courier';
         color: #FFF;
-        font-size: 5pt;
-    		line-height: 3.5pt;
         display: block;
         position: relative;
 		    text-align: center;
 		    padding-bottom: 40px;
+      }
+
+			table#inner-wrapper {
+		    margin: 0 auto;
+		    width: 606px;
+		    height: 360px;
 		    background-position: top center;
 		    background-size: 300px;
 		    background-repeat: no-repeat;
+			}
+
+			table#inner-wrapper .main_span {
+		    max-height: 100%;
+		    position: absolute;
+			}
+
+      span.main_span > span {
+		    width: 4px;
+		    display: inline-block;
+		    font-size: 5pt;
+			}
+
+			table#inner-wrapper tr, table#inner-wrapper td, table#inner-wrapper .main_span, table#inner-wrapper .main-span > span {
+			  min-height: 0px !important;
+			}
+
+      #inner-wrapper tr, #inner-wrapper td , #inner-wrapper td span {
+		    min-height: 0px;
+		    font-size: 5pt;
+      }
+
+      #inner-wrapper .main_span {
+      	display: block;
+        background: rgb(0,0,0);
       }
 
       .class_n0 {
       	color: #a52f05;
-      	display: inline-block;
-      	background: rgb(0,0,0);
-    		box-shadow: 5px 0 0 rgb(0 0 0 / 100%), -5px 0 0 rgb(0 0 0 / 100%);
       }
 
       .class_n1 {
       	color: #a5a413;
-      	display: inline-block;
-      	background: rgb(0,0,0);
-    		box-shadow: 5px 0 0 rgb(0 0 0 / 100%), -5px 0 0 rgb(0 0 0 / 100%);
       }
 
       .class_n2 {
       	color: #55a4a4;
-      	display: inline-block;
-      	background: rgb(0,0,0);
-    		box-shadow: 5px 0 0 rgb(0 0 0 / 100%), -5px 0 0 rgb(0 0 0 / 100%);
       }
 
       .class_n3 {
       	color: #60a612;
-      	display: inline-block;
-      	background: rgb(0,0,0);
-    		box-shadow: 5px 0 0 rgb(0 0 0 / 100%), -5px 0 0 rgb(0 0 0 / 100%);
       }
 
       .class_n4 {
       	color: #a84aa4;
-      	display: inline-block;
-      	background: rgb(0,0,0);
-    		box-shadow: 5px 0 0 rgb(0 0 0 / 100%), -5px 0 0 rgb(0 0 0 / 100%);
       }
 
       .btn {
@@ -79,10 +93,16 @@
       }
 
       @media screen and (max-width:1200px){
-      	#wrapper {
-		    	font-size: 3pt;
-		        line-height: 1.5pt;
-		    }
+
+      	table#inner-wrapper {
+			    height: 180px;
+			    width: 300px;
+				}
+      	span.main_span > span {
+		    width: 2px;
+		    display: inline-block;
+		    font-size: 3pt;
+			}
 
 	      #bigger_btns_wrapper {
 	      	display: none;
@@ -95,16 +115,15 @@
     </style>
     <script type="text/javascript">
     	function bigger_minus(){
-					var element = document.getElementById('wrapper');
+					var element = document.getElementById('inner-wrapper');
 					var smaller_btns_wrapper = document.getElementById('smaller_btns_wrapper');
 					var bigger_btns_wrapper = document.getElementById('bigger_btns_wrapper');
 					var curr_lineheight = parseInt(bigger_btns_wrapper.dataset.lineheight, 10);
-					curr_lineheight = curr_lineheight - 1;
-					if (curr_lineheight > 0) {
+					curr_lineheight = curr_lineheight - 100;
+					if (curr_lineheight > 180) {
 						bigger_btns_wrapper.dataset.lineheight = curr_lineheight;
 						smaller_btns_wrapper.dataset.lineheight = curr_lineheight;
-						curr_lineheight = curr_lineheight + 0.5;
-						element.style['line-height'] = curr_lineheight + 'pt';
+						element.style['height'] = curr_lineheight + 'px';
 					} else {
 						document.getElementById('bigger_btn_minus').style.display = 'none';
 					}
@@ -112,31 +131,29 @@
 
 				function bigger_plus(){
 					
-					var element = document.getElementById('wrapper');
+					var element = document.getElementById('inner-wrapper');
 					element.style.backgroundImage = "url('https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/meme/2.png')";
 					var smaller_btns_wrapper = document.getElementById('smaller_btns_wrapper');
 					var bigger_btns_wrapper = document.getElementById('bigger_btns_wrapper');
 					var curr_lineheight = parseInt(bigger_btns_wrapper.dataset.lineheight, 10);
-					curr_lineheight = curr_lineheight + 1;
+					curr_lineheight = curr_lineheight + 100;
 					bigger_btns_wrapper.dataset.lineheight = curr_lineheight;
 					smaller_btns_wrapper.dataset.lineheight = curr_lineheight;
-					curr_lineheight = curr_lineheight + 0.5;
 					
-					element.style['line-height'] = curr_lineheight + 'pt';
+					element.style['height'] = curr_lineheight + 'px';
 					
 					document.getElementById('bigger_btn_minus').style.display = 'inline-block';
 				}
     	function smaller_minus(){
-					var element = document.getElementById('wrapper');
+					var element = document.getElementById('inner-wrapper');
 					var smaller_btns_wrapper = document.getElementById('smaller_btns_wrapper');
 					var bigger_btns_wrapper = document.getElementById('bigger_btns_wrapper');
 					var curr_lineheight = parseInt(smaller_btns_wrapper.dataset.lineheight, 10);
-					curr_lineheight = curr_lineheight - 1;
-					if (curr_lineheight > 0) {
+					curr_lineheight = curr_lineheight - 100;
+					if (curr_lineheight > 180) {
 						smaller_btns_wrapper.dataset.lineheight = curr_lineheight;
 						bigger_btns_wrapper.dataset.lineheight = curr_lineheight;
-						curr_lineheight = curr_lineheight + 0.5;
-						element.style['line-height'] = curr_lineheight + 'pt';
+						element.style['height'] = curr_lineheight + 'px';
 					} else {
 						document.getElementById('smaller_btn_minus').style.display = 'none';
 					}
@@ -144,17 +161,16 @@
 
 				function smaller_plus(){
 					
-					var element = document.getElementById('wrapper');
+					var element = document.getElementById('inner-wrapper');
 					element.style.backgroundImage = "url('https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/meme/2.png')";
 					var smaller_btns_wrapper = document.getElementById('smaller_btns_wrapper');
 					var bigger_btns_wrapper = document.getElementById('bigger_btns_wrapper');
 					var curr_lineheight = parseInt(smaller_btns_wrapper.dataset.lineheight, 10);
-					curr_lineheight = curr_lineheight + 1;
+					curr_lineheight = curr_lineheight + 100;
 					smaller_btns_wrapper.dataset.lineheight = curr_lineheight;
 					bigger_btns_wrapper.dataset.lineheight = curr_lineheight;
-					curr_lineheight = curr_lineheight + 0.5;
 					
-					element.style['line-height'] = curr_lineheight + 'pt';
+					element.style['height'] = curr_lineheight + 'px';
 
 					document.getElementById('smaller_btn_minus').style.display = 'inline-block';
 				}
@@ -171,16 +187,16 @@
 	">
 		<div style="width:100%;overflow-x: hidden;position: relative;">
 			<div style="width: 2000px;position: relative;left: 50%;margin-left: -1000px;">
-				<div id="wrapper"><div id="inner-wrapper"></div></div>
+				<div id="wrapper"><table id="inner-wrapper" cellspacing="0" border="0" cellpadding="0"></table></div>
 			</div>
 		</div>
 
 
-		<div style="text-align:center;color: #fff;padding-bottom: 20px;" id="bigger_btns_wrapper" data-lineheight="4">
+		<div style="text-align:center;color: #fff;padding-bottom: 20px;" id="bigger_btns_wrapper" data-lineheight="360">
 			Header height:<span id="bigger_btn_minus" onclick="bigger_minus()" class="btn">-</span><span id="bigger_btn_plus" class="btn" onclick="bigger_plus()">+</span>
 		</div>
 
-		<div style="text-align:center;color: #fff;padding-bottom: 20px;" id="smaller_btns_wrapper" data-lineheight="1">
+		<div style="text-align:center;color: #fff;padding-bottom: 20px;" id="smaller_btns_wrapper" data-lineheight="180">
 			Header height:<span id="smaller_btn_minus" onclick="smaller_minus()" class="btn">-</span><span id="smaller_btn_plus" class="btn" onclick="smaller_plus()">+</span>
 		</div>
 

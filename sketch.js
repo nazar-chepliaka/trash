@@ -51,7 +51,7 @@ function asciiString(image) {
       if (c == " ") row += "<span class=\""+class_name+"\">&nbsp;</span>";
       else row += "<span class=\""+class_name+"\">"+c+"</span>";
     }
-    asciiImageString = asciiImageString + "<div><span class=\"main_span\">" + row + "</span></div>";
+    asciiImageString = asciiImageString + "<tr cellspacing=\"0\" border=\"0\" cellpadding=\"0\"><td cellspacing=\"0\" border=\"0\" cellpadding=\"0\"><span class=\"main_span\">" + row + "</span></td></tr>";
   }
 
   return asciiImageString;
