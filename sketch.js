@@ -69,7 +69,8 @@ function preload() {
 function setup() {
   noCanvas();
   asciiContainer = [];
-  asciiDiv = document.getElementById('inner-wrapper');
+  asciiDiv = document.getElementById('inner-wrapper-tbody');
+  furthermore = document.getElementById('furthermore');
 
 
   uno.loadPixels();
@@ -101,5 +102,7 @@ function setup() {
     index = counter - 1;
 
     asciiDiv.innerHTML = asciiContainer[index];
+
+    furthermore.style.display = "block";
   }, 500);
 }

@@ -16,9 +16,7 @@
         font-family: 'Courier';
         color: #FFF;
         display: block;
-        position: relative;
 		    text-align: center;
-		    padding-bottom: 40px;
       }
 
 			table#inner-wrapper {
@@ -28,6 +26,7 @@
 		    background-position: top center;
 		    background-size: 300px;
 		    background-repeat: no-repeat;
+		    position: relative;
 			}
 
 			table#inner-wrapper .main_span {
@@ -132,7 +131,6 @@
 				function bigger_plus(){
 					
 					var element = document.getElementById('inner-wrapper');
-					element.style.backgroundImage = "url('https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/meme/2.png')";
 					var smaller_btns_wrapper = document.getElementById('smaller_btns_wrapper');
 					var bigger_btns_wrapper = document.getElementById('bigger_btns_wrapper');
 					var curr_lineheight = parseInt(bigger_btns_wrapper.dataset.lineheight, 10);
@@ -162,7 +160,6 @@
 				function smaller_plus(){
 					
 					var element = document.getElementById('inner-wrapper');
-					element.style.backgroundImage = "url('https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/meme/2.png')";
 					var smaller_btns_wrapper = document.getElementById('smaller_btns_wrapper');
 					var bigger_btns_wrapper = document.getElementById('bigger_btns_wrapper');
 					var curr_lineheight = parseInt(smaller_btns_wrapper.dataset.lineheight, 10);
@@ -180,17 +177,30 @@
 	<script src="sketch.js"></script>
 
 	<div style="
-		margin-left: 50px;
-	    margin-right: 50px;
 	    max-width: 1030px;
 	    width: 80%;
 	">
-		<div style="width:100%;overflow-x: hidden;position: relative;">
-			<div style="width: 2000px;position: relative;left: 50%;margin-left: -1000px;">
-				<div id="wrapper"><table id="inner-wrapper" cellspacing="0" border="0" cellpadding="0"></table></div>
-			</div>
+		<div style="width:100%;position: relative;overflow: hidden;padding-bottom: 40px;">
+				
+				<div id="wrapper"><table id="inner-wrapper" cellspacing="0" border="0" cellpadding="0">
+					<thead>
+						<tr>
+              <th colspan="150">
+              	<div id="furthermore" style="position: absolute;width: 100%; text-align: center;display: none;">
+              		<a href="https://github.com/nazar-chepliaka/ukr-git-documentation#readme">
+              			<img src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/meme/photo_2022-10-23_18-02-27.jpg" style="width: auto;height:150px;margin-top: 10px;">
+              		</a>
+              	</div>
+              </th>
+          	</tr>
+					</thead>
+					<tbody id="inner-wrapper-tbody">
+						<tr>
+							<td></td>
+						</tr>
+					</tbody>
+				</table></div>
 		</div>
-
 
 		<div style="text-align:center;color: #fff;padding-bottom: 20px;" id="bigger_btns_wrapper" data-lineheight="360">
 			Header height:<span id="bigger_btn_minus" onclick="bigger_minus()" class="btn">-</span><span id="bigger_btn_plus" class="btn" onclick="bigger_plus()">+</span>
