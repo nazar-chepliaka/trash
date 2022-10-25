@@ -6,6 +6,7 @@
 "><head>
 	<meta charset="utf-8">
 	<title></title>
+	<script src="jquery-3.6.1.min.js"></script>
 </head>
 <body style="background:#000;display: flex;flex-direction: column;align-items: center;width: 100%;height: 100%;padding: 0px;margin: 0px;">
 	<div style="
@@ -75,7 +76,78 @@ Products
     max-width: 100%;
     border-bottom: 3px solid #60cbd7;
     border-radius: 25px;
-"><br><br><br>
+">
+<div>
+	<table style="font:8px monospace; color: #60cbd7; position: absolute;margin-left:25px;">
+		<tr>
+			<td class="matrix_col" valign="top"></td>
+			<td class="matrix_col" valign="top"></td>
+			<td class="matrix_col" valign="top"></td>
+			<td class="matrix_col" valign="top"></td>
+			<td class="matrix_col" valign="top"></td>
+			<td class="matrix_col" valign="top"></td>
+			<td class="matrix_col" valign="top"></td>
+			<td class="matrix_col" valign="top"></td>
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript">
+	function getRandomArbitrary(min, max) {
+		return Math.random() * (max - min) + min;
+	}
+
+	window.cols = document.getElementsByClassName('matrix_col');
+	window.chars_ids_array = [];
+	window.last_cols_chars_current_positions_array = [];
+	window.last_cols_chars_positions_of_iteration_array = [];
+	window.chars_max_count = 10;
+
+	function matrix () {
+		for (let i = 0; i < window.cols.length; i++) {
+			let col_innerHTML = window.cols[i].innerHTML;
+			let id_str = Date.now() + '';
+			let char = String.fromCharCode(Math.random() * 128);
+			id_str = id_str + Math.random();
+
+			let char_html = '<span id="'+id_str+'">'+char+'</span><br>';
+
+			if (window.last_cols_chars_current_positions_array.length < window.cols.length) {
+				window.cols[i].innerHTML = col_innerHTML + char_html;
+				window.chars_ids_array.push([id_str]);
+				window.last_cols_chars_positions_of_iteration_array.push(Math.round(getRandomArbitrary(3,window.chars_max_count)));
+				window.last_cols_chars_current_positions_array.push(1);
+			} else {
+
+				if (window.last_cols_chars_current_positions_array[i] == window.last_cols_chars_positions_of_iteration_array[i]) {
+					window.cols[i].innerHTML = char_html;
+					window.chars_ids_array[i] = [id_str];
+					window.last_cols_chars_current_positions_array[i] = 1;
+					window.last_cols_chars_positions_of_iteration_array[i] = Math.round(getRandomArbitrary(3,window.chars_max_count));
+				} else {
+					window.cols[i].innerHTML = col_innerHTML + char_html;
+					window.chars_ids_array[i].unshift(id_str);
+					window.last_cols_chars_current_positions_array[i] = window.chars_ids_array[i].length;
+
+					let iteration_fading_step = 1 / window.last_cols_chars_positions_of_iteration_array[i];
+					let basic_opacity = 1 - (window.chars_ids_array[i].length * iteration_fading_step);
+					let rounded_opacity = Math.round(basic_opacity * 10);
+
+					for (let n = 0; n < window.chars_ids_array[i].length; n++) {
+						//fading
+						let curr_id_str = window.chars_ids_array[i][n];
+						let curr_element = document.getElementById(curr_id_str);
+						curr_element.style.opacity = rounded_opacity / 10;
+					}
+				}
+			}
+		}
+	}
+
+	setInterval(matrix, 200);
+
+</script>
+<br><br><br>
 		</div>
 
 
