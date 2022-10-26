@@ -21,6 +21,11 @@
 		[data-class=menu_link]:hover {
 			border-style: solid !important;
 		}
+
+		.matrix_col span {
+			width: 4px;
+			display: block;
+		}
 	</style>
 </head>
 <body style="background:#000;display: flex;flex-direction: column;align-items: center;width: 100%;height: 100%;padding: 0px;margin: 0px;">
@@ -98,6 +103,7 @@ Products
     border-radius: 25px;
 "></a>
 <div>
+	<a href="https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D0%BF%D0%B0%D0%B4%D0%BD%D0%B0_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C" target="_blank">
 	<table style="font:10px monospace; color: #60cbd7; position: absolute;margin-left:25px;">
 		<tr>
 			<td class="matrix_col" valign="top"></td>
@@ -108,8 +114,11 @@ Products
 			<td class="matrix_col" valign="top"></td>
 			<td class="matrix_col" valign="top"></td>
 			<td class="matrix_col" valign="top"></td>
+			<td class="matrix_col" valign="top"></td>
+			<td class="matrix_col" valign="top"></td>
 		</tr>
 	</table>
+	</a>
 </div>
 
 <script type="text/javascript">
@@ -128,9 +137,11 @@ Products
 			let col_innerHTML = window.cols[i].innerHTML;
 			let id_str = Date.now() + '';
 			let char = String.fromCharCode(Math.random() * 128);
-			id_str = id_str + Math.random();
+			let random_num = Math.random() + '';
+			random_num = random_num.slice(2);
+			id_str = id_str + random_num;
 
-			let char_html = '<span id="'+id_str+'">'+char+'</span><br>';
+			let char_html = '<span id="'+id_str+'">'+char+'</span>';
 
 			if (window.last_cols_chars_current_positions_array.length < window.cols.length) {
 				window.cols[i].innerHTML = col_innerHTML + char_html;
