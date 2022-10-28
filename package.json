@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "watch": "webpack --watch --progress",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "paper": "^0.12.16"
+  },
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
+
