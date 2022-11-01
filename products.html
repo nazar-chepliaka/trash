@@ -27,14 +27,14 @@
 			width: 4px;
 			display: block;
 		}
-		#myCanvas {width: 100%;
+		#myCanvas {
+			width: 110%;
+			height: 110%;
 			background: #0e0c17;
 			position: fixed;
-			height: 100%;
 			z-index: 1;
-			/*max-width: 1400px;*/
-			left: auto;
-			right: auto;
+			top: -5%;
+			left: -5%;
 		}
 	</style>
 	<script src="paper.js"></script>
@@ -163,14 +163,35 @@ function onKeyDown(event) {
 </script>
 
 	<script src="rhill-voronoi-core.js"></script>
+
+	<style type="text/css">
+		#canvas_wrapper {
+			width: 100%;
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+			left: auto;
+			right: auto;
+			overflow: hidden;
+		}
+
+		#main_wrapper {
+			width: 60%;
+		}
+	</style>
 </head>
 <body style="background:#000;display: flex;flex-direction: column;align-items: center;width: 100%;height: 100%;padding: 0px;margin: 0px;">
-	<canvas id="myCanvas" resize></canvas>
+	<div id="canvas_wrapper">
+		<canvas id="myCanvas" resize></canvas>
+	</div>
+	
+
 	<div style="
 		margin-left: 50px;
 		margin-right: 50px;
 		max-width: 688px;
-		width: 80%;
+		width: 100%;
 		min-height: 100%;
 		display: flex;
 		flex-direction: column;
@@ -178,6 +199,7 @@ function onKeyDown(event) {
 	">
 		<div style="
     text-align: center;
+    
 ">
 <img src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/photo_2022-07-03_12-06-35.png" style="
 			    width: 100%;
@@ -330,8 +352,8 @@ function onKeyDown(event) {
 		</div>
 
 
-		<div style="text-align: center;margin-top: 50px;padding-bottom: 0px;">
-<svg style="max-height: 220px;" width="210mm" height="210mm" viewBox="0 0 210 210" version="1.1" id="svg5" inkscape:version="1.2.1 (0f2f062aeb, 2022-09-21, custom)" sodipodi:docname="buildings.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" style="
+		<div style="text-align: center;padding-top: 50px;padding-bottom: 0px;">
+<svg style="max-height: 220px;max-width: 100%;" width="210mm" height="210mm" viewBox="0 0 210 210" version="1.1" id="svg5" inkscape:version="1.2.1 (0f2f062aeb, 2022-09-21, custom)" sodipodi:docname="buildings.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" style="
     height: 200px;
 ">
   <sodipodi:namedview id="namedview7" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" showgrid="false" inkscape:zoom="0.46659888" inkscape:cx="244.3212" inkscape:cy="500.42983" inkscape:window-width="1848" inkscape:window-height="1016" inkscape:window-x="72" inkscape:window-y="27" inkscape:window-maximized="1" inkscape:current-layer="layer1"></sodipodi:namedview>
@@ -353,4 +375,5 @@ function onKeyDown(event) {
 </svg>
 
 
-	</div></body></html>
+	</div>
+</div></body></html>
