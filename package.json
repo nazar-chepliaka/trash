@@ -4,8 +4,7 @@
     "build": "webpack"
   },
   "dependencies": {
-    "paper": "^0.12.16",
-    "three": "^0.146.0"
+    "@fancyapps/ui": "^4.0.31"
   },
   "devDependencies": {
     "webpack": "^5.74.0",
