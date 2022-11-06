@@ -1,6 +1,7 @@
 <html><head><meta data-rh="true" charset="utf-8"><meta data-rh="true" name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="main.js"></script>
+<script src="jquery-3.6.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="fancybox.css">
 
 <style type="text/css">
@@ -25,12 +26,14 @@
 	#checkbox_controller + .container > div {
 		overflow: hidden;
 		max-height: 30px;
-		transition: max-height 1s;
+		max-width: 180px;
+		/*transition: max-width 1s, max-height 1s ease 1s;*/
 	}
-
+/*
 	#checkbox_controller:checked + .container > div {
 		max-height: 3000px !important;
-	}
+		max-width: 500px;
+	}*/
 
 	.matrix_col span {
 			width: 4px;
@@ -38,7 +41,13 @@
 		}
 </style>
 
-</head><body style="background:#000000;/* background-image: url(header_bg.png); *//* background-repeat: no-repeat; *//* background-position:top center; */margin: 0px;">
+</head><body style="background:#000000;/* background-image: url(header_bg.png); *//* background-repeat: no-repeat; *//* background-position:top center; */margin: 0px;
+
+    background-image: url(bitmap2.png);
+    background-repeat: repeat-x;
+    background-position: bottom center;
+
+">
 <div style="
     text-align: center;
 "><img src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/gif/8-cell-simple.gif" style="
@@ -271,7 +280,7 @@
     width: 100%;
     box-sizing: border-box;
     z-index: 2;">
-	<div style="width: 100%;max-width: 500px;margin: 30px auto;background: #b6cfd6;border: 1px solid #3e6169;position: relative;">
+	<div style="width: 100%;margin: 30px auto;background: #b6cfd6;border: 1px solid #3e6169;position: relative;">
 		<div style="text-align:left;"><img src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/lt.svg"></div>
 		<div style="padding: 40px;padding-top: 25px;font-size: 20px;font-family: 'Arial';">
 			<h1 style="color: rgb(0 0 0 / 80%);margin-bottom: 20px;margin-top: 0px;text-align: center;font-size: 22px;line-height: 28px;letter-spacing: 12px;text-transform: uppercase;font-weight: 300;">
@@ -287,7 +296,8 @@
 		<div style="text-align:right;position: absolute;bottom: 0px;right: 0px;"><img src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/rb.svg"></div>
 	</div>
 </div>
-<div style="min-height: 900px; display:flex;align-items: center;
+<div style="min-height: 600px;
+    margin-bottom: 70px; display:flex;align-items: center;
     justify-content: center;z-index: 1;position: relative;">
 <div style="max-width:180px;">
 	
@@ -295,7 +305,7 @@
 style="
 max-width: 100%;
 height: auto;
-opacity: 0.3;
+opacity: 0.7;
 "
    width="210mm"
    height="240mm"
@@ -431,7 +441,7 @@ opacity: 0.3;
 </svg>
 <div style="position: relative;">
 <div style="position: absolute;width: 100%;display: flex;justify-content: center;">
-	<table style="font:10px monospace; color: #60cbd7;opacity: 0.5;">
+	<table style="font:10px monospace; color: #60cbd7;opacity: 0.7;">
 		<tr>
 			<td class="matrix_col" valign="top"></td>
 			<td class="matrix_col" valign="top"></td>
@@ -511,7 +521,39 @@ opacity: 0.3;
 	}
 
 	setInterval(matrix, 200);
-</script>
 
+	$( document ).ready(function() {
+		$( "#checkbox_controller" ).change(function( event ) {
+			if ($(this).hasClass('animation_processing') === false) {
+				$(this).addClass('animation_processing');
+				$(this).attr('disabled', true);
+				if ($(this).is(':checked')) {
+					$( "#checkbox_controller + .container > div" ).animate({
+					    maxWidth: "500px"
+					  }, 1000, function() {
+					    $( "#checkbox_controller + .container > div" ).animate({
+						    maxHeight: "3000px"
+						  }, 1000, function() {
+						    $('#checkbox_controller').removeClass('animation_processing');
+							$('#checkbox_controller').attr('disabled', false);
+						  });
+					  });
+				} else {
+					$( "#checkbox_controller + .container > div" ).animate({
+					    maxHeight: "30px"
+					  }, 1000, function() {
+					    $( "#checkbox_controller + .container > div" ).animate({
+						    maxWidth: "180px"
+						  }, 1000, function() {
+						    $('#checkbox_controller').removeClass('animation_processing');
+							$('#checkbox_controller').attr('disabled', false);
+						  });
+					  });
+				}
+			}
+			
+		});
+	});
+</script>
 
 </body></html>
