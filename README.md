@@ -77,3 +77,5 @@ class NullableMessagePseudoPoolObject {
 <p align="center">
 <img src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/Screenshot-from-2022-10-20-14-22-03.png">
 </p>
+
+// This work is in the public domain in the United States because it was published in the United States between 1927 and 1977, inclusive, without a copyright notice.
