@@ -44,7 +44,9 @@
 
 		#label_id {
 			cursor: pointer;
-    	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='68' height='51' viewBox='0 0 68 51' fill='none' version='1.1'%3E%3Cpath d='m 20.846055,32.784913 0.5867,0.588322 13.084072,-13.016002 13.084072,13.016002 0.58508,-0.588322 -13.669152,-13.59784 z' id='path4469' style='fill:none;fill-opacity:1;stroke-width:1;stroke-dasharray:none;stroke:%238ae2ec;stroke-opacity:1' /%3E%3C/svg%3E");
+    	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='16' viewBox='0 0 29 16' fill='none' version='1.1'%3E%3Cpath d='M 0.83235861,1.5181091 1.4190586,0.92978706 14.503131,13.945789 27.587203,0.92978706 28.172283,1.5181091 14.503131,15.115949 Z' style='fill:none;fill-opacity:1;stroke:%238ae2ec;stroke-width:1;stroke-dasharray:none;stroke-opacity:1'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: center;
 		}
 
 		#prev {
@@ -338,7 +340,7 @@ function onKeyDown(event) {
 </h1>
 <div id="slider_wrapper" style="
     position: relative;
-    padding-bottom: 120px;
+    padding-bottom: 71px;
     ">
 
     <div style="
@@ -348,7 +350,7 @@ function onKeyDown(event) {
     	background-position-y: top;
     	background-position-x: center;
     	top: 0px;
-    bottom: 50px;
+    bottom: 42px;
     	z-index: 1;
     "></div>
     <div style="
@@ -365,7 +367,7 @@ function onKeyDown(event) {
     <div style="
     	width: 100%;
     	position: absolute;
-    	height: 51px;
+    	height: 43px;
     	bottom: 0px;
 	    
 	    display: flex;
@@ -375,13 +377,13 @@ function onKeyDown(event) {
     		
     		<img src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/con_l.svg" style="position: absolute; right: -7px;">
     	</div>
-    	<div style="flex-grow: 0;width: 112px;background-image: url(https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/hex_bg.svg);background-repeat: no-repeat;
+    	<div style="flex-grow: 0;width: 225px;background-image: url(https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/hex_bg.svg);background-repeat: no-repeat;
     		text-align: center;
     	">
     		
     		<label id="label_id" style="
     			width: 68px;
-    			height: 51px;
+    			height: 39px;
     			display: inline-block;
     		">
     			<input id="checkbox_controller" type="checkbox" name="opener" style="opacity:0;">
@@ -437,17 +439,16 @@ function onKeyDown(event) {
 <div id="arrows_wrapper" class="current_1" style="
 	position: absolute;
 	left: 0px;
-	bottom: 50px;
+	bottom: 42px;
 	z-index: 4;
 	width: 100%;
-	height: 70px;
+	height: 62px;
 		 display: flex;
 ">
 	<div
 		style="
 		 width: 50%;
 		 display: flex;
-		 align-items: center;
     justify-content: center;
 		"
 	>
@@ -461,7 +462,6 @@ function onKeyDown(event) {
 		style="
 		 width: 50%;
 		 display: flex;
-		 align-items: center;
     justify-content: center;
 		"
 	>
@@ -475,7 +475,7 @@ function onKeyDown(event) {
 
 </div>
 			
-<div style="margin-top: -51px;">
+<div style="margin-top: -42px;">
 	<a href="https://uk.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%81%D0%BF%D0%B0%D0%B4%D0%BD%D0%B0_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C" target="_blank">
 	<table style="font:10px monospace; color: #60cbd7; position: absolute;margin-left:25px;z-index: 5;">
 		<tr>
@@ -557,27 +557,28 @@ function onKeyDown(event) {
 					
 					
 
+					
 					$( "#slider_wrapper" ).animate({
-					    paddingBottom: "50px"
+					    paddingBottom: "120px"
 					  }, 1000, function() {
-					  	$( "#label_id" ).css({
-						    background: "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='68' height='51' viewBox='0 0 68 51' fill='none' version='1.1'%3E%3Cpath d='m 20.846055,19.77731 0.5867,-0.588322 13.084072,13.016002 13.084072,-13.016002 0.58508,0.588322 -13.669152,13.59784 z' id='path4469' style='fill:none;fill-opacity:1;stroke:%238ae2ec;stroke-width:1;stroke-dasharray:none;stroke-opacity:1' /%3E%3C/svg%3E\")"
+						  $( "#label_id" ).css({
+						    backgroundImage: "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='16' viewBox='0 0 29 16' fill='none' version='1.1'%3E%3Cpath d='M 0.83235861,14.525712 1.4190586,15.114034 14.503131,2.098032 27.587203,15.114034 28.172283,14.525712 14.503131,0.92787198 Z' style='fill:none;fill-opacity:1;stroke:%238ae2ec;stroke-width:1;stroke-dasharray:none;stroke-opacity:1'/%3E%3C/svg%3E\""
 						  });
 						  $('#checkbox_controller').removeClass('animation_processing');
 							$('#checkbox_controller').attr('disabled', false);
 					  });
 				} else {
 					
-
 					$( "#slider_wrapper" ).animate({
-					    paddingBottom: "120px"
+					    paddingBottom: "42px"
 					  }, 1000, function() {
-						  $( "#label_id" ).css({
-						    background: "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='68' height='51' viewBox='0 0 68 51' fill='none' version='1.1'%3E%3Cpath d='m 20.846055,32.784913 0.5867,0.588322 13.084072,-13.016002 13.084072,13.016002 0.58508,-0.588322 -13.669152,-13.59784 z' id='path4469' style='fill:none;fill-opacity:1;stroke-width:1;stroke-dasharray:none;stroke:%238ae2ec;stroke-opacity:1' /%3E%3C/svg%3E\""
+					  	$( "#label_id" ).css({
+						    backgroundImage: "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='16' viewBox='0 0 29 16' fill='none' version='1.1'%3E%3Cpath d='M 0.83235861,1.5181091 1.4190586,0.92978706 14.503131,13.945789 27.587203,0.92978706 28.172283,1.5181091 14.503131,15.115949 Z' style='fill:none;fill-opacity:1;stroke:%238ae2ec;stroke-width:1;stroke-dasharray:none;stroke-opacity:1'/%3E%3C/svg%3E\")"
 						  });
 						  $('#checkbox_controller').removeClass('animation_processing');
 							$('#checkbox_controller').attr('disabled', false);
 					  });
+					
 				}
 			}
 			

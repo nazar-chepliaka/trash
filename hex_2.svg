@@ -22,15 +22,20 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="1.9234008"
-     inkscape:cx="252.15753"
-     inkscape:cy="15.337417"
+     inkscape:zoom="2.8569896"
+     inkscape:cx="224.01202"
+     inkscape:cy="-5.425291"
      inkscape:window-width="1848"
      inkscape:window-height="1016"
      inkscape:window-x="72"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg150" />
+  <path
+     id="polygon148-3-7-6"
+     style="fill:none;stroke:#182636;stroke-width:1"
+     d="m 177.32833,25.106249 -14.67031,25.40972 H 133.3174 l -14.67031,-25.40972 15.21745,-24.33691921 0.001,-0.7444082 m 28.29006,5.103e-4 -0.002,0.5856799 15.16369,24.50638321 0.44059,-8.2e-5"
+     sodipodi:nodetypes="cccccccccc" />
   <path
      id="polygon148-3-75"
      style="fill:none;stroke:#182636;stroke-width:1"
@@ -41,4 +46,14 @@
      style="fill:none;stroke:#182636;stroke-width:1"
      d="M 266.09807,25.12599 251.42776,50.535711 H 222.08714 L 207.41683,25.12599 222.63429,0.78907018 l 0.001,-0.7444082 m 28.29006,5.103e-4 -0.002,0.5856799 15.16369,24.50638382 0.44059,-8.2e-5"
      sodipodi:nodetypes="cccccccccc" />
+  <path
+     id="polygon148-3-3-5"
+     style="fill:none;stroke:#182636;stroke-width:1"
+     d="M 296.12786,25.136277 H 266.52555"
+     sodipodi:nodetypes="cc" />
+  <path
+     id="polygon148-3-7-6-6"
+     style="fill:none;stroke:#182636;stroke-width:1"
+     d="m 325.69575,50.555347 -14.84021,0 -14.67031,-25.40972 15.21745,-24.33691882 0.001,-0.7444082"
+     sodipodi:nodetypes="ccccc" />
 </svg>
