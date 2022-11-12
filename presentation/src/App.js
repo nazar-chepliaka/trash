@@ -35,15 +35,18 @@ function VideoScene() {
   return (
     <mesh position={[0, 0, 1]} transform>
       <planeGeometry args={[2,1]} />
+      {/*<FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/gif/8-cell-simple.gif" />*/}
       <Suspense fallback={<FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/119894003_1062909167475545_6295194101995377324_n.jpg" />}>
-        <VideoMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/video/Infinite_Patterns.mp4" />
+        <VideoMaterial idattr="video" />
       </Suspense>
     </mesh>
   )
 }
 
-function VideoMaterial({ url }) {
-  const texture = useVideoTexture(url)
+function VideoMaterial({ idattr }) {
+  const video = document.getElementById( idattr );
+  /*const texture = useVideoTexture(url)*/
+  const texture = new THREE.VideoTexture( video );
   return <meshBasicMaterial map={texture} toneMapped={false} />
 }
 
