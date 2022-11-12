@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ukr-git-documentation/presentation/build/static/css/main.1e3566e3.css",
-    "main.js": "/ukr-git-documentation/presentation/build/static/js/main.7d273cef.js",
+    "main.js": "/ukr-git-documentation/presentation/build/static/js/main.a463fa29.js",
     "index.html": "/ukr-git-documentation/presentation/build/index.html",
     "main.1e3566e3.css.map": "/ukr-git-documentation/presentation/build/static/css/main.1e3566e3.css.map",
-    "main.7d273cef.js.map": "/ukr-git-documentation/presentation/build/static/js/main.7d273cef.js.map"
+    "main.a463fa29.js.map": "/ukr-git-documentation/presentation/build/static/js/main.a463fa29.js.map"
   },
   "entrypoints": [
     "static/css/main.1e3566e3.css",
-    "static/js/main.7d273cef.js"
+    "static/js/main.a463fa29.js"
   ]
 }

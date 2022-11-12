@@ -64,7 +64,7 @@ function VideoScene() {
             onPointerOut={() => hover(false)}
           >
             <planeGeometry args={[2,1]} />
-            <FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/gif/8-cell-simple.gif" />
+            <FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/holder.jpg" />
             
           </mesh>
       </group>
