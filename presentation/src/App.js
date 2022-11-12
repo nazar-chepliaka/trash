@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, Html, useAspect, useVideoTexture, useTexture, MeshReflectorMaterial  } from '@react-three/drei'
+import { useCursor, OrbitControls, Html, useAspect, useVideoTexture, useTexture, MeshReflectorMaterial  } from '@react-three/drei'
 import * as THREE from 'three';
 
 function Box() {
@@ -32,19 +32,33 @@ function Box() {
 //<video controls="" autoplay="" style="max-height:100%;max-width:100%;width:auto;" name="media" src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/video/Infinite_Patterns.mp4" type="video/mp4" />
 function VideoScene() {
   const size = useAspect(179, 98)
+  const video = document.getElementById( 'video' );
+  const ref = useRef()
+  const clicked = useRef()
+  const [hovered, hover] = useState(false)
+  useCursor(hovered)
   return (
-    <mesh position={[0, 0, 1]} transform>
-      <planeGeometry args={[2,1]} />
-      {/*<FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/gif/8-cell-simple.gif" />*/}
-      <Suspense fallback={<FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/119894003_1062909167475545_6295194101995377324_n.jpg" />}>
-        <VideoMaterial idattr="video" />
-      </Suspense>
-    </mesh>
+
+     <group
+      ref={ref}
+      onClick={(e) => (e.stopPropagation(), video.paused || video.ended ? video.play() : video.pause() )}
+      >
+        <mesh position={[0, 0, 1]} transform
+          onPointerOver={(e) => (e.stopPropagation(), hover(true))}
+          onPointerOut={() => hover(false)}
+        >
+          <planeGeometry args={[2,1]} />
+          {/*<FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/gif/8-cell-simple.gif" />*/}
+          <Suspense fallback={<FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/119894003_1062909167475545_6295194101995377324_n.jpg" />}>
+            <VideoMaterial video={video} />
+          </Suspense>
+          
+        </mesh>
+    </group>
   )
 }
 
-function VideoMaterial({ idattr }) {
-  const video = document.getElementById( idattr );
+function VideoMaterial({ video }) {
   /*const texture = useVideoTexture(url)*/
   const texture = new THREE.VideoTexture( video );
   return <meshBasicMaterial map={texture} toneMapped={false} />
