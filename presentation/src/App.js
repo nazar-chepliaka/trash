@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useCursor, OrbitControls, Html, useAspect, useVideoTexture, useTexture, MeshReflectorMaterial  } from '@react-three/drei'
+import { useCursor, OrbitControls, Html, useAspect, useVideoTexture, useTexture, MeshReflectorMaterial } from '@react-three/drei'
 import * as THREE from 'three';
 
 function Box() {
@@ -33,27 +33,41 @@ function Box() {
 function VideoScene() {
   const size = useAspect(179, 98)
   const video = document.getElementById( 'video' );
-  const ref = useRef()
-  const clicked = useRef()
+  const refVideo = useRef()
   const [hovered, hover] = useState(false)
   useCursor(hovered)
   return (
+    <group>
+      
 
-     <group
-      ref={ref}
-      onClick={(e) => (e.stopPropagation(), video.paused || video.ended ? video.play() : video.pause() )}
-      >
-        <mesh position={[0, 0, 1]} transform
-          onPointerOver={(e) => (e.stopPropagation(), hover(true))}
-          onPointerOut={() => hover(false)}
+       <group
+        onClick={(e) => (e.stopPropagation(), video.paused || video.ended ? refVideo.current.position.z = 1.01 : refVideo.current.position.z = 0.99, video.paused || video.ended ? video.play() : video.pause() )}
         >
-          <planeGeometry args={[2,1]} />
-          {/*<FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/gif/8-cell-simple.gif" />*/}
-          <Suspense fallback={<FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/119894003_1062909167475545_6295194101995377324_n.jpg" />}>
-            <VideoMaterial video={video} />
-          </Suspense>
-          
-        </mesh>
+          <mesh position={[0, 0, 0.99]} transform
+            onPointerOver={(e) => (e.stopPropagation(), hover(true))}
+            onPointerOut={() => hover(false)}
+            ref={refVideo}
+          >
+            <planeGeometry args={[2,1]} />
+            <Suspense fallback={<FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/holder.jpg" />}>
+              <VideoMaterial video={video} />
+            </Suspense>
+            
+          </mesh>
+      </group>
+
+      <group
+        onClick={(e) => (e.stopPropagation(), video.paused || video.ended ? refVideo.current.position.z = 1.01 : refVideo.current.position.z = 0.99, video.paused || video.ended ? video.play() : video.pause() )}
+        >
+          <mesh position={[0, 0, 1]} transform
+            onPointerOver={(e) => (e.stopPropagation(), hover(true))}
+            onPointerOut={() => hover(false)}
+          >
+            <planeGeometry args={[2,1]} />
+            <FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/gif/8-cell-simple.gif" />
+            
+          </mesh>
+      </group>
     </group>
   )
 }
