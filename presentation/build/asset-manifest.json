@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/presentation/build/static/css/main.1e3566e3.css",
+    "main.js": "/presentation/build/static/js/main.7390842b.js",
+    "index.html": "/presentation/build/index.html",
+    "main.1e3566e3.css.map": "/presentation/build/static/css/main.1e3566e3.css.map",
+    "main.7390842b.js.map": "/presentation/build/static/js/main.7390842b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1e3566e3.css",
+    "static/js/main.7390842b.js"
+  ]
+}
