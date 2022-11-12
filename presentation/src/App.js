@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, Html, useAspect, useVideoTexture, useTexture  } from '@react-three/drei'
+import { OrbitControls, Html, useAspect, useVideoTexture, useTexture, MeshReflectorMaterial  } from '@react-three/drei'
 import * as THREE from 'three';
 
 function Box() {
@@ -11,6 +11,21 @@ function Box() {
       <meshBasicMaterial color={0x8ae2ec} />
       <VideoScene />
     </boxHelper>
+    <mesh position={[-1, -1, -1]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[50, 50]} />
+        <MeshReflectorMaterial
+          blur={[300, 100]}
+          resolution={2048}
+          mixBlur={0}
+          mixStrength={40}
+          roughness={1}
+          depthScale={1.2}
+          minDepthThreshold={0}
+          maxDepthThreshold={1.4}
+          color="#090909"
+          metalness={0.5}
+        />
+      </mesh>
   </group>
   )
 }
