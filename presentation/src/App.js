@@ -9,21 +9,18 @@ function Box() {
   <group>
     <boxHelper args={[new THREE.Mesh( new THREE.BoxGeometry( 2, 2, 2 ) )]} >
       <meshBasicMaterial color={0x8ae2ec} />
-      <Html distanceFactor={1.1} position={[0, 0, 1]} transform>
-        <h2>Presentation</h2>
-        <video controls="" autoplay="" name="media" src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/video/Infinite_Patterns.mp4" type="video/mp4" />
-      </Html>
+      <VideoScene />
     </boxHelper>
   </group>
   )
 }
 //<video controls="" autoplay="" style="max-height:100%;max-width:100%;width:auto;" name="media" src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/video/Infinite_Patterns.mp4" type="video/mp4" />
 function VideoScene() {
-  const size = useAspect(1, 1)
+  const size = useAspect(179, 98)
   return (
-    <mesh scale={size} position={[0, 0, 0,51]}  distanceFactor={1.1} transform>
-      <planeGeometry />
-      <Suspense fallback={<FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/photo_2022-07-03_12-06-35.png" />}>
+    <mesh position={[0, 0, 1]} transform>
+      <planeGeometry args={[2,1]} />
+      <Suspense fallback={<FallbackMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/119894003_1062909167475545_6295194101995377324_n.jpg" />}>
         <VideoMaterial url="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/video/Infinite_Patterns.mp4" />
       </Suspense>
     </mesh>
