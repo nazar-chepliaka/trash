@@ -506,18 +506,18 @@ function onKeyDown(event) {
 					  	$( "#slide_1" ).animate({
 						    opacity: "0",
 						    left: "70px"
+						  }, 1000);
+
+						  $( "#slide_2" ).animate({
+						    opacity: "1",
+						    left: "0px"
 						  }, 1000, function() {
 						  	$( "#slide_2" ).animate({
-							    opacity: "1",
-							    left: "0px"
+							    top: "0px"
 							  }, 1000, function() {
-							  	$( "#slide_2" ).animate({
-								    top: "0px"
-								  }, 1000, function() {
-								  	$("#arrows_wrapper").removeClass('animation_processing');
-								  	$("#arrows_wrapper").removeClass('current_1');
-								  	$("#arrows_wrapper").addClass('current_2');
-								  });
+							  	$("#arrows_wrapper").removeClass('animation_processing');
+							  	$("#arrows_wrapper").removeClass('current_1');
+							  	$("#arrows_wrapper").addClass('current_2');
 							  });
 						  });
 					  });
@@ -532,18 +532,18 @@ function onKeyDown(event) {
 					  	$( "#slide_2" ).animate({
 						    opacity: "0",
 						    left: "-70px"
+						  }, 1000);
+
+						  $( "#slide_1" ).animate({
+						    opacity: "1",
+						    left: "0px"
 						  }, 1000, function() {
 						  	$( "#slide_1" ).animate({
-							    opacity: "1",
-							    left: "0px"
+							    top: "0px"
 							  }, 1000, function() {
-							  	$( "#slide_1" ).animate({
-								    top: "0px"
-								  }, 1000, function() {
-								  	$("#arrows_wrapper").removeClass('animation_processing');
-								  	$("#arrows_wrapper").removeClass('current_2');
-								  	$("#arrows_wrapper").addClass('current_1');
-								  });
+							  	$("#arrows_wrapper").removeClass('animation_processing');
+							  	$("#arrows_wrapper").removeClass('current_2');
+							  	$("#arrows_wrapper").addClass('current_1');
 							  });
 						  });
 					  });
