@@ -7,6 +7,7 @@
 <style type="text/css">
 	body {
 		color: rgb(15 25 25);
+		position: relative;
 	}
 	.container {
 		padding-left: 30px;
@@ -74,11 +75,13 @@
 }
 </style>
 
-</head><body style="background:#000000;/* background-image: url(header_bg.png); *//* background-repeat: no-repeat; *//* background-position:top center; */margin: 0px;
+</head><body style="background:#000000;margin: 0px;
 
     background-image: url(btm_l.png);
     background-repeat: repeat-x;
     background-position: bottom center;
+
+    min-height: 100%;
 
 ">
 <div style="
@@ -481,7 +484,7 @@
 	});
 </script>
 
-<table style="color: #7be3cf; opacity: 0;font-weight: bold;" id="char">
+<table style="color: #7be3cf;width: 153px; opacity: 1;font-weight: bold; position: absolute; right:40px; bottom: 0px;" id="char">
 	<tbody><tr>
 		<td></td>
 		<td></td>
@@ -489,7 +492,9 @@
 		<td></td>
 		<td>_</td>
 		<td>_</td>
-		<td>_</td>
+		<td></td>
+		<td></td>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -497,107 +502,175 @@
 	</tr>
 	<tr>
 		<td></td>
+		<td></td>
+		<td>_</td>
+		<td>//</td>
+		<td></td>
+		<td></td>
+		<td>|</td>
+		<td>_</td>
+		<td>_</td>
+		<td>_</td>
+		<td>_</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>/</td>
+		<td></td>
+		<td>o</td>
 		<td></td>
 		<td></td>
 		<td>/</td>
 		<td></td>
-		<td>u</td>
-		<td>u</td>
+		<td></td>
+		<td></td>
+		<td></td>
 		<td>\</td>
-		<td>_</td>
-		<td>_</td>
 		<td></td>
 	</tr>
-	<tr id="line_3">
-		<td></td>
-		<td></td>
-		<td></td>
-		<td>|</td>
-		<td></td>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
+	<tr>
 		<td>/</td>
-	</tr>
-	<tr id="line_4">
 		<td></td>
+		<td>_</td>
+		<td>_</td>
+		<td><sub>/</sub></td>
+		<td>/</td>
 		<td></td>
-		<td></td>
-		<td>|</td>
-		<td></td>
-		<td>v</td>
-		<td>v</td>
-		<td>v</td>
-		<td>v</td>
-		<td>v</td>
-		<td></td>
-	</tr>
-	<tr id="line_5">
-		<td></td>
-		<td></td>
+		<td>P</td>
+		<td>H</td>
+		<td>P</td>
 		<td></td>
 		<td>|</td>
-		<td></td>
-		<td>^</td>
-		<td>^</td>
-		<td>^</td>
-		<td>^</td>
-		<td>^</td>
-		<td></td>
-	</tr>
-	<tr id="line_6">
-		<td></td>
-		<td></td>
-		<td></td>
-		<td>|</td>
-		<td></td>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
 		<td>\</td>
 	</tr>
 	<tr>
-		<td></td>
-		<td></td>
+		<td>|</td>
+		<td>/</td>
 		<td></td>
 		<td>|</td>
 		<td></td>
-		<td></td>
-		<td></td>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-		<td><sup>/</sup></td>
-	</tr>
-	<tr>
-		<td></td>
+		<td>_</td>
+		<td>_</td>
+		<td>_</td>
+		<td>_</td>
 		<td></td>
 		<td></td>
 		<td>|</td>
-		<td></td>
-		<td>|</td>
-		<td></td>
-		<td>|</td>
-		<td></td>
-		<td></td>
 		<td></td>
 	</tr>
 	<tr>
+		<td>|</td>
+		<td>|</td>
+		<td></td>
+		<td>|</td>
+		<td>_</td>
+		<td>|</td>
 		<td></td>
 		<td></td>
 		<td></td>
 		<td>|</td>
-		<td></td>
-		<td>-</td>
-		<td>\</td>
-		<td></td>
-		<td>\</td>
-		<td></td>
+		<td>_</td>
+		<td>|</td>
 		<td></td>
 	</tr>
 </tbody></table>
+
+<script>
+	
+	function moveChar() {
+		var char_el = $('#char');
+
+		let move_length = '';
+
+		for (let i = 0; move_length.length < 2; i++) {
+			let random_num = Math.random() + '';
+			random_num = random_num.slice(2);
+
+			for (let k = 0; k < random_num.length; k++) {
+				let random_num_part = random_num.slice(k, k+1);
+				random_num_part = parseInt(random_num_part);
+				if ((random_num_part != 0 && move_length.length == 0) || move_length.length == 1) {
+					move_length = move_length + '' + random_num_part;
+				}
+			}
+
+			if (i > 100) {
+				break;
+			}
+		}
+
+		let to_right_curr_px = $('#char').css('right');
+		to_right_curr = to_right_curr_px.slice(0, to_right_curr_px.length - 2);
+		to_right_curr_int = parseInt(to_right_curr);
+
+		let move_length_int = parseInt(move_length);
+
+		if (move_length_int % 2 == 1) {
+			move_length_int = move_length_int + 1;
+		}
+
+		let half_move_length_int = move_length_int / 2;
+
+		let to_right_move = 0;
+
+		if (move_length_int < 50 ) {
+
+			to_right_move = to_right_curr_int - half_move_length_int;
+
+			if (to_right_move < 0) {
+				to_right_move = 0;
+			}
+			
+			$('#char').animate({
+				bottom: move_length_int+"px",
+				right: to_right_move+"px"
+			}, 1000, function() {
+				let to_right_curr_px = $('#char').css('right');
+				to_right_curr = to_right_curr_px.slice(0, to_right_curr_px.length - 2);
+				to_right_curr_int = parseInt(to_right_curr);
+
+				to_right_move = to_right_curr_int - half_move_length_int;
+
+				if (to_right_move < 0) {
+					to_right_move = 0;
+				}
+
+			    $('#char').animate({
+					bottom: "0px",
+					right: to_right_move+"px"
+				}, 1000);
+			});
+		} else {
+			to_right_move = to_right_curr_int + half_move_length_int;
+
+			if ((to_right_move + 153) > window.innerWidth) {
+				to_right_move = window.innerWidth - 153;
+			}
+
+			$('#char').animate({
+				bottom: move_length_int+"px",
+				right: to_right_move+"px"
+			}, 1000, function() {
+				let to_right_curr_px = $('#char').css('right');
+				to_right_curr = to_right_curr_px.slice(0, to_right_curr_px.length - 2);
+				to_right_curr_int = parseInt(to_right_curr);
+
+				to_right_move = to_right_curr_int + half_move_length_int;
+
+				if ((to_right_move + 153) > window.innerWidth) {
+					to_right_move = window.innerWidth - 153;
+				}
+
+			    $('#char').animate({
+					bottom: "0px",
+					right: to_right_move+"px"
+				}, 1000);
+			});
+		}
+	}
+
+	setInterval(moveChar, 2000);
+</script>
 </body></html>
