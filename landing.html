@@ -484,8 +484,9 @@
 	});
 </script>
 
-<table style="color: #7be3cf;width: 153px; opacity: 1;font-weight: bold; position: absolute; right:40px; bottom: 0px;" id="char">
+<table style="color: #7be3cf;width: 153px;max-width: 153px; opacity: 1;font-weight: bold; position: absolute; right:40px; bottom: 0px;" id="char">
 	<tbody><tr>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -501,6 +502,7 @@
 		<td></td>
 	</tr>
 	<tr>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td>_</td>
@@ -517,6 +519,7 @@
 	</tr>
 	<tr>
 		<td></td>
+		<td></td>
 		<td>/</td>
 		<td></td>
 		<td>o</td>
@@ -531,6 +534,7 @@
 		<td></td>
 	</tr>
 	<tr>
+		<td></td>
 		<td>/</td>
 		<td></td>
 		<td>_</td>
@@ -546,6 +550,7 @@
 		<td>\</td>
 	</tr>
 	<tr>
+		<td></td>
 		<td>|</td>
 		<td>/</td>
 		<td></td>
@@ -561,8 +566,9 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td>|</td>
-		<td>|</td>
+		<td></td>
+		<td>-</td>
+		<td></td>
 		<td></td>
 		<td>|</td>
 		<td>_</td>
@@ -615,7 +621,29 @@
 
 		let to_right_move = 0;
 
-		if (move_length_int < 50 ) {
+		let move_dir = '';
+
+		for (let i = 0; move_dir.length < 2; i++) {
+			let random_num = Math.random() + '';
+			random_num = random_num.slice(2);
+
+			for (let k = 0; k < random_num.length; k++) {
+				let random_num_part = random_num.slice(k, k+1);
+				random_num_part = parseInt(random_num_part);
+				if ((random_num_part != 0 && move_dir.length == 0) || move_dir.length == 1) {
+					move_dir = move_dir + '' + random_num_part;
+				}
+			}
+
+			if (i > 100) {
+				break;
+			}
+		}
+
+		let move_dir_int = parseInt(move_dir);
+
+
+		if (move_dir_int < 50 ) {
 
 			to_right_move = to_right_curr_int - half_move_length_int;
 
@@ -627,11 +655,7 @@
 				bottom: move_length_int+"px",
 				right: to_right_move+"px"
 			}, 1000, function() {
-				let to_right_curr_px = $('#char').css('right');
-				to_right_curr = to_right_curr_px.slice(0, to_right_curr_px.length - 2);
-				to_right_curr_int = parseInt(to_right_curr);
-
-				to_right_move = to_right_curr_int - half_move_length_int;
+				to_right_move = to_right_move - half_move_length_int;
 
 				if (to_right_move < 0) {
 					to_right_move = 0;
@@ -653,13 +677,9 @@
 				bottom: move_length_int+"px",
 				right: to_right_move+"px"
 			}, 1000, function() {
-				let to_right_curr_px = $('#char').css('right');
-				to_right_curr = to_right_curr_px.slice(0, to_right_curr_px.length - 2);
-				to_right_curr_int = parseInt(to_right_curr);
+				to_right_move = to_right_move + half_move_length_int;
 
-				to_right_move = to_right_curr_int + half_move_length_int;
-
-				if ((to_right_move + 153) > window.innerWidth) {
+				if ((to_right_move + 155) > window.innerWidth) {
 					to_right_move = window.innerWidth - 153;
 				}
 
