@@ -601,11 +601,11 @@
 			}
 		}
 
-		let to_right_curr_px = $('#char').css('right');
-		to_right_curr = to_right_curr_px.slice(0, to_right_curr_px.length - 2);
-		to_right_curr_int = parseInt(to_right_curr);
+		let move_length_int = 10;
 
-		let move_length_int = parseInt(move_length);
+		if (move_length.length) {
+			move_length_int = parseInt(move_length);
+		}
 
 		if (move_length_int % 2 == 1) {
 			move_length_int = move_length_int + 1;
@@ -614,6 +614,9 @@
 		let half_move_length_int = move_length_int / 2;
 
 		let to_right_move = 0;
+		let to_right_curr_px = $('#char').css('right');
+		to_right_curr = to_right_curr_px.slice(0, to_right_curr_px.length - 2);
+		to_right_curr_int = parseInt(to_right_curr);
 
 		let move_dir = '';
 
@@ -634,8 +637,11 @@
 			}
 		}
 
-		let move_dir_int = parseInt(move_dir);
+		let move_dir_int = 0;
 
+		if (move_dir.length) {
+			move_dir_int = parseInt(move_dir);
+		}
 
 		if (move_dir_int < 50 ) {
 
@@ -646,7 +652,7 @@
 			}
 			
 			$('#char').animate({
-				bottom: move_length_int+"px",
+				bottom: half_move_length_int+"px",
 				right: to_right_move+"px"
 			}, 1000, function() {
 				to_right_move = to_right_move - half_move_length_int;
@@ -669,7 +675,7 @@
 			}
 
 			$('#char').animate({
-				bottom: move_length_int+"px",
+				bottom: half_move_length_int+"px",
 				right: to_right_move+"px"
 			}, 1000, function() {
 				to_right_move = to_right_move + half_move_length_int;
