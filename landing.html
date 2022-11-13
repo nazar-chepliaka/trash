@@ -484,7 +484,7 @@
 	});
 </script>
 
-<table style="color: #7be3cf;width: 153px;max-width: 153px; opacity: 1;font-weight: bold; position: absolute; right:40px; bottom: 0px;" id="char">
+<table style="color: #7be3cf;width: 161px;max-width: 153px; opacity: 1;font-weight: bold; position: absolute; right:40px; bottom: 0px;" id="char">
 	<tbody><tr>
 		<td></td>
 		<td></td>
@@ -669,8 +669,8 @@
 		} else {
 			to_right_move = to_right_curr_int + half_move_length_int;
 
-			if ((to_right_move + 153) > window.innerWidth) {
-				to_right_move = window.innerWidth - 153;
+			if ((to_right_move + 161) > window.innerWidth) {
+				to_right_move = window.innerWidth - 161;
 			}
 
 			$('#char').animate({
@@ -679,8 +679,8 @@
 			}, 1000, function() {
 				to_right_move = to_right_move + half_move_length_int;
 
-				if ((to_right_move + 155) > window.innerWidth) {
-					to_right_move = window.innerWidth - 153;
+				if ((to_right_move + 161) > window.innerWidth) {
+					to_right_move = window.innerWidth - 161;
 				}
 
 			    $('#char').animate({
