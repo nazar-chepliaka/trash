@@ -52,26 +52,15 @@
 		width: 4px;
 	}
 
-	#line_3 td {
-		height: 4px;
-    	line-height: 0px;
-    	padding-top: 6px;
+	#char #to_right {
+		margin-right: -4px;
+		position: relative;
 	}
 
-	#line_4 td {
-		    height: 3px;
-    line-height: 0px;
-    padding-bottom: 10px;
-	}
-
-	#line_5 td {
-		height: 0px;
-    	line-height: 0px;
-	}
-
-	#line_6 td {
-		height: 0px;
-    	line-height: 0px;
+	#char #to_right span {
+		right: -1px;
+		top: 0px;
+		position: absolute;
 	}
 
 	blockquote {
@@ -558,7 +547,7 @@
 		<td><span></span></td>
 		<td><span></span></td>
 		<td><span>|</span></td>
-		<td><span>/</span></td>
+		<td id="to_right"><span>/</span></td>
 		<td><span>|</span></td>
 		<td><span></span></td>
 		<td><span>_</span></td>
@@ -672,7 +661,7 @@
 				}, 1000);
 			});
 		} else {
-			
+
 			to_right_move = to_right_curr_int + half_move_length_int;
 
 			if ((to_right_move + 153) > window.innerWidth) {
