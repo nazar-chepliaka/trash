@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useCursor, OrbitControls, Html, useAspect, useVideoTexture, useTexture, MeshReflectorMaterial } from '@react-three/drei'
+import { useCursor, OrbitControls, Html, useAspect, useVideoTexture, useTexture, MeshReflectorMaterial, Text } from '@react-three/drei'
 import * as THREE from 'three';
 
 function Box() {
@@ -11,6 +11,7 @@ function Box() {
       <meshBasicMaterial color={0x8ae2ec} />
       <VideoScene />
     </boxHelper>
+    
     <mesh position={[-1, -1, -1]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[50, 50]} />
         <MeshReflectorMaterial
@@ -29,7 +30,7 @@ function Box() {
   </group>
   )
 }
-//<video controls="" autoplay="" style="max-height:100%;max-width:100%;width:auto;" name="media" src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/video/Infinite_Patterns.mp4" type="video/mp4" />
+
 function VideoScene() {
   const size = useAspect(179, 98)
   const video = document.getElementById( 'video' );
