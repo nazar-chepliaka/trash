@@ -66,7 +66,7 @@
 
     background-image: url(https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/rand.svg);
     background-repeat: repeat-x;
-    background-position: left;
+    background-position: 0px 50%;
     background-size: auto 85%;
     ">
     <div style="display: flex;flex-direction: column;height: 100%;width: 100%;justify-content: flex-end;
@@ -499,13 +499,11 @@
             let positionArray = position.split(" ");
             let numeric = positionArray[0].replace('px', '');
             let left = parseInt(numeric);
-            let newLeft = left + 5;
+            let newLeft = left + 1;
             console.log(position)
 
-               $('#dynamic').animate({
-                  backgroundPosition: newLeft + "px",
-               }, 2000);
-         }, 2100);
+               $('#dynamic').css('background-position', newLeft + "px 50%");
+         }, 350);
 
          $('#button').click(function() {
             if ($('#button').hasClass('animated') == false && $('#button').hasClass('animation') == false) {
