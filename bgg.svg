@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3"
+   height="1000"
+   viewBox="0 0 0.79374999 264.58333"
+   version="1.1"
+   id="svg4998"
+   inkscape:version="1.2.1 (8a69933317, 2022-10-28, custom)"
+   sodipodi:docname="bgg.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview5000"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.89013156"
+     inkscape:cx="-8.9874355"
+     inkscape:cy="628.55877"
+     inkscape:window-width="1848"
+     inkscape:window-height="1016"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs4995">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient6239">
+      <stop
+         style="stop-color:#0f0b1d;stop-opacity:1;"
+         offset="0"
+         id="stop6235" />
+      <stop
+         style="stop-color:#60cbd7;stop-opacity:0;"
+         offset="1"
+         id="stop6237" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6239"
+       id="linearGradient6241"
+       x1="0.13688649"
+       y1="-348.27411"
+       x2="0.13688649"
+       y2="240.5289"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0.13804834)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:url(#linearGradient6241);stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 0.27165076,264.51428 V 0.00142053"
+       id="path5121" />
+  </g>
+</svg>

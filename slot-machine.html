@@ -1,0 +1,683 @@
+<html><head><meta data-rh="true" charset="utf-8"><meta data-rh="true" name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="jquery-3.6.1.min.js"></script>
+<style type="text/css">
+   #knob {
+      background: #0096a7;
+      position: absolute;
+      border-radius: 10px;
+      z-index: 4;
+      cursor: pointer;
+   }
+   #hand {
+      background: #60cbd7;
+      position: absolute;
+      border-radius: 10px;
+      z-index: 3;
+      overflow: visible;
+      cursor: pointer;
+   }
+   #glass {
+      position: absolute;
+      z-index: 2;
+   }
+   #initial_screen {
+      position: absolute;
+      z-index: 1;
+   }
+   #button_holder {
+      background: #0096a7;
+      position: absolute;
+      z-index: 2;
+   }
+   #button {
+      position: absolute;
+      z-index: 3;
+      cursor: pointer;
+   }
+   #letter_n1_slot {
+      position: absolute;
+      z-index: 1;
+      overflow: hidden;
+   }
+   #letter_n2_slot {
+      position: absolute;
+      z-index: 1;
+      overflow: hidden;
+   }
+   #letter_n3_slot {
+      position: absolute;
+      z-index: 1;
+      overflow: hidden;
+   }
+
+   .letter {
+      max-width: 100%;
+      max-height: 100%;
+   }
+</style>
+</head><body style="background:#000000;margin: 0px;
+   background-image: url('https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/bgg.svg');
+   background-repeat: repeat-x;
+    min-height: 100%;
+
+">
+  <div style="display: flex;flex-direction: column;height: 100%;width: 100%;justify-content: flex-end;
+    align-items: center;">
+
+<div style="display: inline-block;position: relative;text-align: right;">
+   
+   <div id="knob"></div>
+   <div id="hand"></div>
+   <div id="button_holder"></div>
+   <img id="button" src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/btn.svg">
+   <img id="glass" src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/glass.svg">
+   <img id="initial_screen" src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/initial_screen.svg">
+
+   <div id="letter_n1_slot" style="display: none;"><img class="letter" src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/x.svg"></div>
+   <div id="letter_n2_slot" style="display: none;"><img class="letter" src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/y.svg"></div>
+   <div id="letter_n3_slot" style="display: none;"><img class="letter" src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/j.svg"></div>
+
+   <script>
+
+      function getRatio() {
+         let initial_width = 430;
+         let current_width = $('#svg5').outerWidth();
+
+         return current_width / initial_width;
+      }
+
+      function setInitialScreen() {
+         let ratio = getRatio();
+
+         let initial_width = 282;
+         let current_width = initial_width * ratio;
+
+         let initial_height = 157;
+         let current_height = initial_height * ratio;
+
+         let initial_top = 158;
+         let current_top = initial_top * ratio;
+
+         let initial_left = 58;
+         let current_left = initial_left * ratio;
+
+         $('#initial_screen').css({
+            width: current_width+'px',
+            height: current_height+'px',
+            top: current_top+'px',
+            left: current_left+'px',
+         })
+      }
+
+      function setGlass() {
+         let ratio = getRatio();
+
+         let initial_width = 282;
+         let current_width = initial_width * ratio;
+
+         let initial_height = 157;
+         let current_height = initial_height * ratio;
+
+         let initial_top = 158;
+         let current_top = initial_top * ratio;
+
+         let initial_left = 58;
+         let current_left = initial_left * ratio;
+
+         $('#glass').css({
+            width: current_width+'px',
+            height: current_height+'px',
+            top: current_top+'px',
+            left: current_left+'px',
+         })
+      }
+
+      function setButtonHolder() {
+         let ratio = getRatio();
+
+         let initial_width = 35;
+         let current_width = initial_width * ratio;
+
+         let initial_height = 12;
+         let current_height = initial_height * ratio;
+
+         let initial_top = 391;
+         let current_top = initial_top * ratio;
+
+         let initial_left = 108;
+         let current_left = initial_left * ratio;
+
+         $('#button_holder').css({
+            width: current_width+'px',
+            height: current_height+'px',
+            top: current_top+'px',
+            left: current_left+'px',
+         })
+      }
+
+      function setButton() {
+         let ratio = getRatio();
+
+         let initial_width = 52;
+         let current_width = initial_width * ratio;
+
+         let initial_height = 21;
+         let current_height = initial_height * ratio;
+
+         let initial_top = 376;
+         let current_top = initial_top * ratio;
+
+         let initial_left = 100;
+         let current_left = initial_left * ratio;
+
+         $('#button').css({
+            width: current_width+'px',
+            height: current_height+'px',
+            top: current_top+'px',
+            left: current_left+'px',
+         })
+      }
+
+      function setHand() {
+         let ratio = getRatio();
+
+         let initial_width = 18;
+         let current_width = initial_width * ratio;
+
+         let initial_height = 100;
+         let current_height = initial_height * ratio;
+
+         let initial_top = 198;
+         let current_top = initial_top * ratio;
+
+         let initial_left = 398;
+         let current_left = initial_left * ratio;
+
+         $('#hand').css({
+            width: current_width+'px',
+            height: current_height+'px',
+            top: current_top+'px',
+            left: current_left+'px',
+         })
+      }
+
+      function setKnob() {
+         let ratio = getRatio();
+
+         let initial_width = 30;
+         let current_width = initial_width * ratio;
+
+         let initial_height = 30;
+         let current_height = initial_height * ratio;
+
+         let initial_top = 178;
+         let current_top = initial_top * ratio;
+
+         let initial_left = 392;
+         let current_left = initial_left * ratio;
+
+         $('#knob').css({
+            width: current_width+'px',
+            height: current_height+'px',
+            top: current_top+'px',
+            left: current_left+'px',
+         })
+      }
+
+      function setFirstLetter() {
+         let ratio = getRatio();
+
+         let initial_width = 67;
+         let current_width = initial_width * ratio;
+
+         let initial_height = 67;
+         let current_height = initial_height * ratio;
+
+         let initial_top = 205;
+         let current_top = initial_top * ratio;
+
+         let initial_left = 88;
+         let current_left = initial_left * ratio;
+
+         $('#letter_n1_slot').css({
+            width: current_width+'px',
+            height: current_height+'px',
+            top: current_top+'px',
+            left: current_left+'px',
+         })
+      }
+
+      function setSecondLetter() {
+         let ratio = getRatio();
+
+         let initial_width = 67;
+         let current_width = initial_width * ratio;
+
+         let initial_height = 67;
+         let current_height = initial_height * ratio;
+
+         let initial_top = 205;
+         let current_top = initial_top * ratio;
+
+         let initial_left = 175;
+         let current_left = initial_left * ratio;
+
+         $('#letter_n2_slot').css({
+            width: current_width+'px',
+            height: current_height+'px',
+            top: current_top+'px',
+            left: current_left+'px',
+         })
+      }
+
+      function setThirdLetter() {
+         let ratio = getRatio();
+
+         let initial_width = 67;
+         let current_width = initial_width * ratio;
+
+         let initial_height = 67;
+         let current_height = initial_height * ratio;
+
+         let initial_top = 205;
+         let current_top = initial_top * ratio;
+
+         let initial_left = 252;
+         let current_left = initial_left * ratio;
+
+         $('#letter_n3_slot').css({
+            width: current_width+'px',
+            height: current_height+'px',
+            top: current_top+'px',
+            left: current_left+'px',
+         })
+      }
+
+      function startScreenPrepared() {
+         $('#button').addClass('animated');
+         $('#button').removeClass('animation');
+      }
+
+      function prepareStartScreen() {
+         $('#button').addClass('animation');
+         let ratio = getRatio();
+
+         let initial_height_holder = 12;
+         let current_height_holder = initial_height_holder * ratio;
+
+         let initial_top_holder = 391;
+         let current_top_holder = initial_top_holder * ratio;
+
+         let initial_height = 21;
+         let current_height = initial_height * ratio;
+
+         let initial_top = 376;
+         let current_top = initial_top * ratio;
+
+         let to_top = current_height_holder + current_top_holder - current_height;
+
+         $( "#button" ).animate({
+             top: to_top+"px",
+           }, 1000, function() {
+            $('#initial_screen').fadeOut(1000);
+             $( "#button" ).animate({
+               top: current_top+"px",
+              }, 1000, function() {
+                  $('#letter_n1_slot').fadeIn(1000);
+                  $('#letter_n2_slot').fadeIn(1000);
+                  $('#letter_n3_slot').fadeIn(1000);
+
+                  const myTimeout = setTimeout(startScreenPrepared, 1000);
+               });
+           });
+      }
+
+      function animateButton() {
+         $('#button').addClass('animation');
+         let ratio = getRatio();
+
+         let initial_height_holder = 12;
+         let current_height_holder = initial_height_holder * ratio;
+
+         let initial_top_holder = 391;
+         let current_top_holder = initial_top_holder * ratio;
+
+         let initial_height = 21;
+         let current_height = initial_height * ratio;
+
+         let initial_top = 376;
+         let current_top = initial_top * ratio;
+
+         let to_top = current_height_holder + current_top_holder - current_height;
+
+         $( "#button" ).animate({
+             top: to_top+"px",
+           }, 1000, function() {
+             $( "#button" ).animate({
+               top: current_top+"px",
+              }, 1000, function() {
+                  $('#button').removeClass('animation');
+               });
+           });
+      }
+
+      function animateHand() {
+         let ratio = getRatio();
+
+         let initial_height_hand = 100;
+         let current_height_hand = initial_height_hand * ratio;
+
+         let initial_top_hand = 198;
+         let current_top_hand = initial_top_hand * ratio;
+
+         let to_top_hand = current_top_hand + current_height_hand;
+
+         $( "#hand" ).animate({
+             height: "0px",
+             top: to_top_hand+"px",
+           }, 1000, function() {
+             $( "#hand" ).animate({
+               height: current_height_hand+'px',
+               top: current_top_hand+"px",
+              }, 1000);
+           });
+
+         let initial_top_knob = 178;
+         let current_top_knob = initial_top_knob * ratio;
+
+         let top_diff = current_top_hand - current_top_knob;
+
+         let to_top_knob = to_top_hand - top_diff;
+
+         $( "#knob" ).animate({
+             top: to_top_knob+"px",
+           }, 1000, function() {
+             $( "#knob" ).animate({
+               top: current_top_knob+"px",
+              }, 1000, function() {
+                  $('#hand').removeClass('animation');
+               });
+           });
+      }
+
+      function spinLetter(slot, img_class) {
+         let ratio = getRatio();
+
+         let initial_height = 67;
+         let current_height = initial_height * ratio;
+
+         $(slot + ' ' + img_class).animate({
+            marginTop: "-"+current_height+"px",
+         }, 250, function() {
+            $(slot + ' ' + img_class).css('margin-top',current_height+'px');
+         });
+      }
+
+      function tryToSpin() {
+         if ($('#hand').hasClass('spins') == false) {
+
+            if ($('#button').hasClass('animated') && $('#hand').hasClass('animation') == false) {
+               $('#hand').addClass('spins');
+               $('#hand').addClass('animation');
+               animateHand();
+
+               const slot = '#letter_n1_slot';
+               const img_class = '.letter';
+
+               const intervalID = setInterval(spinLetter, 250, slot, img_class);
+
+               setTimeout(function() {
+                  clearInterval(intervalID);
+                  $(slot + ' ' + img_class).animate({
+                     marginTop: "0px",
+                  }, 500);
+               }, 3000);
+
+               const slot_n2 = '#letter_n2_slot';
+
+               const intervalID_n2 = setInterval(spinLetter, 250, slot_n2, img_class);
+
+               setTimeout(function() {
+                  clearInterval(intervalID_n2);
+                  $(slot_n2 + ' ' + img_class).animate({
+                     marginTop: "0px",
+                  }, 500);
+               }, 4000);
+
+               const slot_n3 = '#letter_n3_slot';
+
+               const intervalID_n3 = setInterval(spinLetter, 250, slot_n3, img_class);
+
+               setTimeout(function() {
+                  clearInterval(intervalID_n3);
+                  $(slot_n3 + ' ' + img_class).animate({
+                     marginTop: "0px",
+                  }, 500, function() {
+                     $('#hand').removeClass('spins');
+                  });
+               }, 5000);
+
+            } else {
+               if ($('#hand').hasClass('animation') == false) {
+                  $('#hand').addClass('animation');
+                  animateHand();
+               }
+            }
+         }
+      }
+      
+      $( document ).ready(function() {
+         setInitialScreen();
+         setGlass();
+         setButtonHolder();
+         setButton();
+         setHand();
+         setKnob();
+         setFirstLetter();
+         setSecondLetter();
+         setThirdLetter();
+
+         $('#button').click(function() {
+            if ($('#button').hasClass('animated') == false && $('#button').hasClass('animation') == false) {
+               prepareStartScreen();
+            } else {
+               if ($('#button').hasClass('animation') == false) {
+                  animateButton();
+               }
+            }
+         });
+
+         $('#hand').click(function() {
+            tryToSpin();
+         });
+
+         $('#knob').click(function() {
+            tryToSpin();
+         });
+      });
+
+      $( window ).resize(function() {
+         setInitialScreen();
+         setGlass();
+         setButtonHolder();
+         setButton();
+         setHand();
+         setKnob();
+         setFirstLetter();
+         setSecondLetter();
+         setThirdLetter();
+      });
+   </script>
+
+<svg
+   style="max-width: 100%; max-height: 100%; width: auto; height: auto;"
+   width="450"
+   height="644"
+   viewBox="0 0 119.0625 170.39168"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (8a69933317, 2022-10-28, custom)"
+   sodipodi:docname="slot-machine.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.4693164"
+     inkscape:cx="214.6343"
+     inkscape:cy="217.67158"
+     inkscape:window-width="1848"
+     inkscape:window-height="1016"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#60cbd7;fill-opacity:0.34734;stroke:#60cbd7;stroke-width:0.536393;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       id="rect2267"
+       width="82.033257"
+       height="49.460896"
+       x="14.416166"
+       y="41.028652"
+       ry="0" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 101.5948,20.675663 1.20019,-2.07877 h 2.60755 v 16.408203 l -5.94655,5.94654 v 49.55295 h 3.24392 v 3.10239 l 7.30593,12.654224 v 63.85291 l -51.52468,1.7e-4 H 0.93563216 V 106.26137 L 8.2415622,93.607146 v -3.10239 H 11.485483 V 40.951806 L 5.5389322,35.005256 V 18.597047 h 2.60755 l 1.24328,2.078696 z"
+       id="path418-3"
+       sodipodi:nodetypes="cccccccccccccccccccccc" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 8.2162082,93.604316 H 102.69662"
+       id="path534" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 11.472966,90.506326 H 99.43265"
+       id="path536" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 11.907574,93.622616 4.6016432,106.27684 v 63.85291"
+       id="path418"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 99.02151,93.649096 7.30593,12.654224 v 63.85291"
+       id="path418-7"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 0.91192516,106.27729 H 4.5870092"
+       id="path619" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 106.23091,106.31041 h 3.72141"
+       id="path621" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 4.6037122,114.47022 H 106.29521"
+       id="path623" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 4.6022082,119.68608 H 106.2937"
+       id="path623-5" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 4.6749832,114.40494 16.263935,107.71405 H 94.57083 l 11.6286,6.71378"
+       id="path697" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 16.293301,107.7128 V 93.617546"
+       id="path714" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 94.47731,107.72674 V 93.595276"
+       id="path732" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 11.469206,41.030156 H 99.44325"
+       id="path751" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.535551;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 5.5264042,34.927796 H 105.35094"
+       id="path771" />
+    <rect
+       style="fill:none;stroke:#60cbd7;stroke-width:0.536393;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       id="rect844"
+       width="10.756851"
+       height="12.51121"
+       x="99.462502"
+       y="72.906311"
+       ry="2.2754011" />
+    <rect
+       style="fill:#cbe6e9;fill-opacity:1;stroke:#46949c;stroke-width:1.436;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       id="rect2198"
+       width="72.977959"
+       height="39.997684"
+       x="18.848196"
+       y="45.442165"
+       ry="6.3375459" />
+    <path
+       style="fill:#60cbd7;fill-opacity:0.34902;stroke:none;stroke-width:1.32029;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       d="M 1.3089909,138.12551 V 106.62274 H 2.7685808 4.228168 v 31.50277 31.50276 H 2.7685808 1.3089909 Z"
+       id="path7197" />
+    <path
+       style="fill:#60cbd7;fill-opacity:0.34902;stroke:none;stroke-width:1.32029;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       d="m 1.79552,105.744 c 0,-0.0819 1.5052014,-2.76228 3.344889,-5.956347 l 3.3448889,-5.80739 1.2771384,-0.0036 c 0.7024257,-0.0021 1.2771387,0.06731 1.2771387,0.154019 0,0.08671 -1.5030505,2.768704 -3.3401134,5.959978 l -3.3401132,5.8023 H 3.0774342 c -0.7050511,0 -1.2819142,-0.067 -1.2819142,-0.14895 z"
+       id="path7199" />
+    <path
+       style="fill:#60cbd7;fill-opacity:0.34902;stroke:none;stroke-width:1.32029;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       d="m 103.23685,100.15631 c -1.80624,-3.147216 -3.320562,-5.825961 -3.36516,-5.952768 -0.04465,-0.126963 0.51519,-0.230555 1.24601,-0.230555 h 1.32709 l 3.11422,5.412637 c 1.71282,2.976946 3.27199,5.658936 3.46482,5.959976 0.3494,0.54548 0.34572,0.54733 -1.07616,0.54014 l -1.42675,-0.007 z"
+       id="path7201" />
+    <path
+       style="fill:#60cbd7;fill-opacity:0.34902;stroke:none;stroke-width:1.32029;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       d="m 106.64256,138.12551 v -31.50277 h 1.45959 1.45958 v 31.50277 31.50276 h -1.45958 -1.45959 z"
+       id="path7203" />
+    <path
+       style="fill:#60cbd7;fill-opacity:0.34902;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 101.02001,36.460496 -4.40231,4.40231 h 2.55077 l 5.68996,-5.68997 H 6.0818972 l 5.5808788,5.58088 h 2.314311 L 9.7512192,36.527856 H 101.13862 l -4.23465,4.23465 -0.28627,0.1003"
+       id="path8657-5" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 42.248276,137.54246 V 170.0083"
+       id="path11655" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 68.635675,137.72053 v 32.46584"
+       id="path11655-6" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 42.24622,145.60574 H 68.564375"
+       id="path11684" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 29.882944,119.64388 v 17.85389 H 80.76147 v -17.87238"
+       id="path11754" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
+       x="25.046654"
+       y="68.526985"
+       id="text11842"><tspan
+         sodipodi:role="line"
+         id="tspan11840"
+         style="stroke-width:0.264583" /></text>
+  </g>
+</svg>
+</div>
+</div>
+</body></html>
