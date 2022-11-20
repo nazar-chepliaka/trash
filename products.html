@@ -562,7 +562,7 @@ function onKeyDown(event) {
     border-right: 0px !important;
     border-color: rgb(62 124 131) !important;
     position: absolute;
-    	z-index: 5;
+    	z-index: 6;
     	top: 0px;
     	left: 0px;
 
@@ -582,6 +582,7 @@ function onKeyDown(event) {
     	top: -70px;
     	left: -70px;
     	opacity: 0;
+    	display: none;
 
 ">
 	<img src="https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/assets/images/119894003_1062909167475545_6295194101995377324_n.jpg">
@@ -657,7 +658,13 @@ function onKeyDown(event) {
 					  	$( "#slide_1" ).animate({
 						    opacity: "0",
 						    left: "70px"
-						  }, 1000);
+						  }, 1000, function() {
+							  $( "#slide_1" ).css('display', 'none');
+							  $( "#slide_1" ).css('z-index', 5);
+						  });
+
+						  $( "#slide_2" ).css('z-index', 6);
+						  $( "#slide_2" ).css('display', 'inline');
 
 						  $( "#slide_2" ).animate({
 						    opacity: "1",
@@ -683,7 +690,13 @@ function onKeyDown(event) {
 					  	$( "#slide_2" ).animate({
 						    opacity: "0",
 						    left: "-70px"
-						  }, 1000);
+						  }, 1000, function() {
+						  	$( "#slide_2" ).css('display', 'none');
+						  	$( "#slide_2" ).css('z-index', 5);
+						  });
+
+						  $( "#slide_1" ).css('z-index', 6);
+						  $( "#slide_1" ).css('display', 'inline');
 
 						  $( "#slide_1" ).animate({
 						    opacity: "1",
