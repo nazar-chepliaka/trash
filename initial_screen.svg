@@ -46,12 +46,12 @@
        sodipodi:nodetypes="czcccccscc" />
     <path
        style="fill:none;stroke:#60cbd7;stroke-width:0.548161;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       d="m 22.709997,22.83113 c -0.19121,3.292715 -0.74855,5.68778 -1.922756,8.923794 l 3.204167,-0.159353 -4.278593,4.687905 -3.898031,-5.984788 3.102544,1.235749 c 0,0 0.171998,-2.545371 -0.02214,-3.795614 -0.2557,-1.646705 -1.48822,-4.772669 -1.48822,-4.772669 z"
+       d="m 22.709997,24.418631 c -0.19121,3.292715 -0.74855,5.68778 -1.922756,8.923794 l 3.204167,-0.159353 -4.278593,4.687905 -3.898031,-5.984788 3.102544,1.235749 c 0,0 0.171998,-2.545371 -0.02214,-3.795614 -0.2557,-1.646705 -1.48822,-4.772669 -1.48822,-4.772669 z"
        id="path419-6"
        sodipodi:nodetypes="ccccccacc" />
     <g
        aria-label="Крутануть"
-       transform="rotate(-17.375056)"
+       transform="rotate(-13.445967,-19.608499,-8.1892117)"
        id="text9462"
        style="font-size:4.97432px;font-family:Arcade;-inkscape-font-specification:Arcade;fill:#357075;stroke:#46949c;stroke-width:0.232658">
       <g
@@ -259,5 +259,15 @@
            id="path10793" />
       </g>
     </g>
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
+       d="M 4.5796633,22.247612 37.020397,22.286993 37.336038,14.903551 4.2175559,14.695617 Z"
+       id="path33371"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#60cbd7;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 39.759941,16.010941 2.642969,8.648514 27.936989,-7.400278 0.337989,-4.732866 -5.802037,-3.4142989 z"
+       id="path33373"
+       sodipodi:nodetypes="cccccc" />
   </g>
 </svg>

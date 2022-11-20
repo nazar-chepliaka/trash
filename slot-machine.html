@@ -56,15 +56,29 @@
    }
 </style>
 </head><body style="background:#000000;margin: 0px;
-   background-image: url('https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/bgg.svg');
+   background-image: url('https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/bg_line.svg');
    background-repeat: repeat-x;
-    min-height: 100%;
+   background-size: 3px 100%;
+   min-height: 100%;
 
 ">
-  <div style="display: flex;flex-direction: column;height: 100%;width: 100%;justify-content: flex-end;
-    align-items: center;">
+  <div id="dynamic" style="display: block;height: 100%;width: 100%;
 
-<div style="display: inline-block;position: relative;text-align: right;max-height: 100%;">
+    background-image: url(https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/rand.svg);
+    background-repeat: repeat-x;
+    background-position: left;
+    background-size: auto 85%;
+    ">
+    <div style="display: flex;flex-direction: column;height: 100%;width: 100%;justify-content: flex-end;
+    align-items: center;
+
+    background-image: url(https://raw.githubusercontent.com/nazar-chepliaka/ukr-git-documentation/main/btm_l_2.png);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: auto 15%;
+    ">
+
+<div style="display: inline-block;position: relative;text-align: right;max-height: 100%;background-image: ;">
    
    <div id="knob"></div>
    <div id="hand"></div>
@@ -476,6 +490,22 @@
          setFirstLetter();
          setSecondLetter();
          setThirdLetter();
+
+         
+
+         setInterval(function() {
+
+            let position = $('#dynamic').css('background-position');
+            let positionArray = position.split(" ");
+            let numeric = positionArray[0].replace('px', '');
+            let left = parseInt(numeric);
+            let newLeft = left + 5;
+            console.log(position)
+
+               $('#dynamic').animate({
+                  backgroundPosition: newLeft + "px",
+               }, 2000);
+         }, 2010);
 
          $('#button').click(function() {
             if ($('#button').hasClass('animated') == false && $('#button').hasClass('animation') == false) {
@@ -907,6 +937,7 @@
        id="path3232-7" />
   </g>
 </svg>
+</div>
 </div>
 </div>
 </body></html>
