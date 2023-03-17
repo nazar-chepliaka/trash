@@ -22,6 +22,12 @@
     <link rel="icon" type="image/svg+xml" href="assets/meta/favicon.svg">
 
     <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    <style>
+      /* Disable intrinsic user agent touch behaviors (such as panning or zooming) so
+      that all events on the canvas element are given to the application instead. */
+
+      canvas { touch-action: none; }
+    </style>
 </head>
 <body>
     <div id="root"></div>
